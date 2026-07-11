@@ -389,35 +389,108 @@ img, svg { max-width: 100%; display: block; }
   margin-inline: auto;
 }
 
-/* ---------- Ecosystem bar ---------- */
-.ecosystem-bar {
-  background: var(--header-bg);
-  color: rgba(255, 255, 255, .75);
-  padding-block: 1.1rem;
-  border-bottom: 3px solid var(--accent);
+/* ---------- Ecosystem logos ---------- */
+.ecosystem {
+  background: var(--ink-50);
+  border-bottom: 1px solid var(--ink-200);
+  padding-block: clamp(2rem, 4vw, 3rem);
+  text-align: center;
 }
-.ecosystem-bar .container {
+.ecosystem__intro {
+  font-size: .95rem;
+  color: var(--ink-700);
+  margin: 0 auto 1.5rem;
+  max-width: 560px;
+}
+.ecosystem__logos {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem 1.5rem;
+  margin-bottom: 1.25rem;
+}
+.eco-logo {
+  display: inline-flex;
   align-items: center;
-  gap: 1rem 2rem;
+  gap: .55rem;
+  padding: .65rem 1rem;
+  background: var(--white);
+  border: 1px solid var(--ink-200);
+  min-width: 140px;
+  justify-content: center;
 }
-.ecosystem-bar__label {
-  font-size: .72rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
+.eco-logo__mark {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background: var(--header-bg);
+  color: var(--white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .65rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
-  color: var(--accent);
 }
-.ecosystem-bar__list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .75rem 1.5rem;
-}
-.ecosystem-bar__list li {
+.eco-logo__name {
   font-size: .9rem;
-  font-weight: 500;
-  color: rgba(255, 255, 255, .85);
+  font-weight: 600;
+  color: var(--navy-900);
+}
+.ecosystem__note {
+  margin: 0;
+  font-size: .82rem;
+  color: var(--ink-500);
+}
+
+/* ---------- Tech cards ---------- */
+.tech-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+.tech-card {
+  background: var(--white);
+  border: 1px solid var(--ink-200);
+  padding: 1.75rem 1.5rem;
+  transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+}
+.tech-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+.tech-card__icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--header-bg);
+  color: var(--accent);
+  margin-bottom: 1.1rem;
+}
+.tech-card h3 {
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  color: var(--navy-900);
+  margin-bottom: .65rem;
+}
+.tech-card p {
+  margin: 0;
+  font-size: .95rem;
+  color: var(--ink-500);
+  line-height: 1.65;
+}
+
+.authority-band h2 {
+  max-width: 720px;
+  margin-inline: auto;
+}
+.authority-band p {
+  max-width: 640px;
+  margin-inline: auto;
 }
 
 /* ---------- Problems ---------- */
@@ -1371,6 +1444,7 @@ img, svg { max-width: 100%; display: block; }
   .grid-2--conocenos { grid-template-columns: 1fr; }
   .conocenos__photo img { max-width: 100%; }
   .problems-grid { grid-template-columns: 1fr 1fr; }
+  .tech-cards { grid-template-columns: 1fr; }
   .pillars-main { grid-template-columns: 1fr; }
   .systems-grid { grid-template-columns: 1fr; }
   .cases-grid { grid-template-columns: 1fr; }
