@@ -44,14 +44,18 @@
   <!-- =================== HERO =================== -->
   <section class="hero" id="top">
     <div class="hero__stage" aria-hidden="true">
-      <img
+      <video
         class="hero__bg"
-        src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=2000&q=80"
-        alt=""
-        width="2000"
-        height="1200"
-        loading="eager"
-      />
+        id="heroVideo"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        poster="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=2000&q=80"
+      >
+        <source src="videos/hero-bg.mp4" type="video/mp4" />
+      </video>
       <div class="hero__veil"></div>
     </div>
     <div class="container hero__copy">

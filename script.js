@@ -11,6 +11,18 @@
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  const heroVideo = document.getElementById('heroVideo');
+  if (heroVideo) {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) {
+      heroVideo.pause();
+      heroVideo.removeAttribute('autoplay');
+    } else {
+      const play = heroVideo.play();
+      if (play && typeof play.catch === 'function') play.catch(() => {});
+    }
+  }
+
   const whatsappHref = WHATSAPP_NUMBER
     ? `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Hola NuVEM, quiero solicitar un diagnóstico financiero.')}`
     : '#contacto';
