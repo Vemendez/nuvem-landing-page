@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Nuvem — Firma de inteligencia financiera en República Dominicana. Contabilidad, cumplimiento DGII, FP&A, automatización y portales B2B para PYMES." />
+  <meta name="description" content="Nuvem — Equipo financiero y contable externo para PYMES en República Dominicana. Contabilidad, cumplimiento DGII, ADM Cloud, QuickBooks, automatización y FP&A." />
   <meta name="theme-color" content="#000B21" />
-  <title>Nuvem · Inteligencia Financiera para PYMES</title>
+  <title>Nuvem · Contabilidad y finanzas operativas para PYMES</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,12 +27,13 @@
 
       <nav class="nav__links" id="navLinks" aria-label="Navegación principal">
         <a href="#top">Inicio</a>
-        <a href="#nosotros">Nosotros</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#contacto">Contacto</a>
+        <a href="#problemas">Problemas</a>
+        <a href="#pilares">Servicios</a>
+        <a href="#sistemas">Sistemas</a>
+        <a href="#contacto">Diagnóstico</a>
       </nav>
 
-      <a href="#contacto" class="btn btn--nav nav__cta">Contáctanos</a>
+      <a href="#contacto" class="btn btn--nav nav__cta">Solicitar diagnóstico</a>
 
       <button class="nav__burger" id="navBurger" aria-label="Abrir menú" aria-controls="navLinks" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -43,13 +44,20 @@
   <!-- =================== HERO =================== -->
   <section class="hero" id="top">
     <div class="container hero__copy">
-      <h1 class="hero__title">Inteligencia financiera para el crecimiento de su empresa</h1>
-      <p class="hero__subtitle">Perspectivas claras sobre contabilidad, cumplimiento y decisiones basadas en datos.</p>
+      <h1 class="hero__title">Contabilidad y finanzas operativas para empresas que necesitan más control, menos trabajo manual y mejores decisiones.</h1>
+      <p class="hero__subtitle">
+        Gestionamos su contabilidad, cumplimiento tributario, conciliaciones, nómina, reportería y sistemas financieros para que su empresa opere con información confiable y procesos escalables.
+      </p>
+      <p class="hero__ecosystem">Especializados en empresas de República Dominicana · ADM Cloud · QuickBooks · DGII · TSS · e-CF</p>
+      <div class="hero__actions">
+        <a href="#contacto" class="btn btn--navy btn--lg">Solicitar diagnóstico financiero</a>
+        <a href="#proceso" class="btn btn--outline btn--lg">Conocer cómo trabajamos</a>
+      </div>
     </div>
     <figure class="hero__media">
       <img
         src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1600&q=80"
-        alt="Profesional analizando documentos financieros en un escritorio"
+        alt="Profesional analizando documentos financieros"
         width="1600"
         height="600"
         loading="eager"
@@ -57,225 +65,254 @@
     </figure>
   </section>
 
-  <!-- =================== SERVICIOS DESTACADOS =================== -->
-  <section class="section section--light services-intro" id="servicios-intro">
+  <!-- =================== ECOSISTEMA =================== -->
+  <section class="ecosystem-bar" aria-label="Herramientas y ecosistema">
     <div class="container">
-      <h2 class="section__title section__title--center">Conozca nuestros servicios financieros</h2>
-      <div class="services-intro__grid">
-        <article class="services-intro__card">
-          <h3>Contabilidad operativa</h3>
-          <p>Cierre mensual, conciliaciones y estados financieros confiables para operar con claridad.</p>
-        </article>
-        <article class="services-intro__card">
-          <h3>Cumplimiento DGII</h3>
-          <p>Formatos 606, 607 y 608 validados y listos para envío, sin estrés tributario.</p>
-        </article>
-        <article class="services-intro__card">
-          <h3>Análisis y reportería</h3>
-          <p>Dashboards, FP&A y automatizaciones para decisiones gerenciales en tiempo real.</p>
-        </article>
-      </div>
-      <div class="services-intro__cta">
-        <a href="#servicios" class="btn btn--navy">Nuestros servicios</a>
-      </div>
+      <span class="ecosystem-bar__label">Trabajamos sobre</span>
+      <ul class="ecosystem-bar__list" role="list">
+        <li>ADM Cloud</li>
+        <li>QuickBooks</li>
+        <li>DGII</li>
+        <li>TSS</li>
+        <li>e-CF</li>
+        <li>Bancos</li>
+        <li>Excel</li>
+        <li>Power BI</li>
+      </ul>
     </div>
   </section>
 
-  <!-- =================== QUIÉNES SOMOS =================== -->
-  <section class="section section--soft about-split" id="nosotros">
-    <div class="container">
-      <h2 class="section__title section__title--center">Planificación financiera para la vida y el éxito de su negocio</h2>
-      <div class="about-split__media">
-        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Dashboard financiero en una tablet" width="800" height="600" loading="lazy" />
-        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Análisis de datos financieros en computadora" width="800" height="600" loading="lazy" />
-      </div>
-    </div>
-  </section>
-
-  <section class="section section--light" id="nosotros-detalle">
-    <div class="container grid-2">
-      <div>
-        <span class="eyebrow eyebrow--dark">Quiénes somos</span>
-        <h2 class="section__title">Su socio financiero, con la disciplina de una firma y la agilidad de un equipo interno.</h2>
-        <p class="lead">
-          Nuvem es una firma de inteligencia financiera especializada en implementación contable, analítica financiera y transformación digital para empresas en República Dominicana.
-        </p>
-        <p>
-          Ayudamos a nuestros clientes a operar con <strong>claridad financiera</strong>, <strong>automatizar procesos</strong>, <strong>cumplir con sus obligaciones tributarias</strong> y tomar decisiones basadas en datos.
-        </p>
-
-        <div class="pillars">
-          <div class="pillar">
-            <div class="pillar__icon">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l3-9 6 18 6-13 3 4"/></svg>
-            </div>
-            <h3>Claridad financiera</h3>
-            <p>Estados financieros confiables y tableros que muestran lo que importa.</p>
-          </div>
-          <div class="pillar">
-            <div class="pillar__icon">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-4 9-8 10-4-1-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg>
-            </div>
-            <h3>Cumplimiento sin estrés</h3>
-            <p>606 / 607 / 608, e-CF, retenciones y nómina al día.</p>
-          </div>
-          <div class="pillar">
-            <div class="pillar__icon">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg>
-            </div>
-            <h3>Automatización</h3>
-            <p>Menos planillas, más procesos integrados a su ERP y bancos.</p>
-          </div>
-          <div class="pillar">
-            <div class="pillar__icon">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10M5 20v-6M19 20V4"/></svg>
-            </div>
-            <h3>Decisiones con data</h3>
-            <p>FP&A y dashboards que conectan operación con resultado.</p>
-          </div>
-        </div>
-      </div>
-
-      <aside class="quote-card">
-        <div class="quote-card__badge">Nuestra promesa</div>
-        <p class="quote-card__text">
-          "Operar como si fuéramos su CFO y su equipo de finanzas — con la rigurosidad de una firma y la cercanía de un partner."
-        </p>
-        <div class="quote-card__meta">
-          <div class="quote-card__avatar" aria-hidden="true">NV</div>
-          <div>
-            <strong>Equipo NuVEM</strong>
-            <span>Santo Domingo, República Dominicana</span>
-          </div>
-        </div>
-
-        <ul class="quote-card__list" role="list">
-          <li><span>›</span> Cierre mensual confiable y a tiempo</li>
-          <li><span>›</span> Visibilidad de caja y márgenes</li>
-          <li><span>›</span> Acompañamiento estratégico continuo</li>
-        </ul>
-      </aside>
-    </div>
-  </section>
-
-  <!-- =================== SERVICIOS =================== -->
-  <section class="section section--light section--catalog" id="servicios">
+  <!-- =================== PROBLEMAS =================== -->
+  <section class="section section--light" id="problemas">
     <div class="container">
       <div class="section__head section__head--center">
-        <h2 class="section__title section__title--center">Catálogo completo de servicios</h2>
-        <p class="section__sub">Contrate solo lo que necesita hoy. Crezca con nosotros mañana.</p>
+        <h2 class="section__title section__title--center">¿Su operación financiera depende demasiado de Excel, procesos manuales y conocimiento disperso?</h2>
+        <p class="section__sub">Si reconoce alguno de estos síntomas, Nuvem puede estructurar su operación financiera.</p>
       </div>
 
-      <div class="services">
-        <article class="service">
-          <div class="service__num">01</div>
-          <h3>Implementación y Onboarding</h3>
-          <p>Configuramos su sistema contable desde cero, adaptado a su operación.</p>
+      <div class="problems-grid">
+        <article class="problem-card">
+          <h3>Conciliaciones acumuladas</h3>
+          <p>Las conciliaciones bancarias se atrasan y nadie tiene certeza del saldo real.</p>
+        </article>
+        <article class="problem-card">
+          <h3>Estados financieros tarde</h3>
+          <p>No recibe P&amp;L ni Balance a tiempo para decidir con información del mes.</p>
+        </article>
+        <article class="problem-card">
+          <h3>Diferencias sin explicar</h3>
+          <p>Hay gaps entre contabilidad, bancos y declaraciones que nadie cierra.</p>
+        </article>
+        <article class="problem-card">
+          <h3>ERP mal configurado</h3>
+          <p>ADM Cloud o QuickBooks no reflejan su operación, catálogo fiscal ni controles.</p>
+        </article>
+        <article class="problem-card">
+          <h3>DGII, TSS y nómina consumen tiempo</h3>
+          <p>El cumplimiento mensual se vuelve un incendio recurrente del equipo.</p>
+        </article>
+        <article class="problem-card">
+          <h3>Sin visibilidad gerencial</h3>
+          <p>La gerencia no ve con claridad caja, márgenes, cartera o inventarios.</p>
+        </article>
+      </div>
+
+      <p class="problems-closer">
+        <strong>Nuvem convierte estos procesos en una operación financiera estructurada, documentada y controlada.</strong>
+      </p>
+    </div>
+  </section>
+
+  <!-- =================== CUATRO PILARES =================== -->
+  <section class="section section--soft" id="pilares">
+    <div class="container">
+      <div class="section__head section__head--center">
+        <span class="eyebrow eyebrow--dark">Cómo ayudamos</span>
+        <h2 class="section__title section__title--center">Cuatro pilares. Una operación financiera controlada.</h2>
+        <p class="section__sub">Primero organizamos → después controlamos → luego automatizamos → finalmente analizamos.</p>
+      </div>
+
+      <div class="pillars-main">
+        <article class="pillar-main">
+          <div class="pillar-main__num">01</div>
+          <h3>Contabilidad y cierre financiero</h3>
+          <p>Su contabilidad mes a mes con trazabilidad y cierre oportuno.</p>
           <ul role="list">
-            <li>Kickoff y levantamiento de procesos</li>
-            <li>Configuración del sistema</li>
-            <li>Capacitación al equipo + manual operativo</li>
-            <li>Certificación e-CF ante la DGII</li>
+            <li>Conciliaciones bancarias</li>
+            <li>Registro y clasificación contable</li>
+            <li>Cuentas por cobrar y por pagar</li>
+            <li>Inventario y costo de ventas</li>
+            <li>Cierre mensual · P&amp;L · Balance · Flujo de efectivo</li>
           </ul>
         </article>
 
-        <article class="service service--featured">
-          <span class="service__pill">Más solicitado</span>
-          <div class="service__num">02</div>
-          <h3>Contabilidad Operativa Mensual</h3>
-          <p>Su contabilidad mes a mes con cierre oportuno y trazabilidad total.</p>
+        <article class="pillar-main">
+          <div class="pillar-main__num">02</div>
+          <h3>Cumplimiento fiscal y nómina</h3>
+          <p>Obligaciones dominicanas al día, con validación antes del envío.</p>
           <ul role="list">
-            <li>Conciliación bancaria y clasificación</li>
-            <li>Gestión de cuentas por cobrar y pagar</li>
-            <li>Control de inventario y COGS</li>
-            <li>Cierre mensual con P&L y Balance General</li>
-          </ul>
-        </article>
-
-        <article class="service">
-          <div class="service__num">03</div>
-          <h3>Cumplimiento DGII (606 / 607 / 608)</h3>
-          <p>Preparamos y validamos sus formatos de envío fiscal cada mes.</p>
-          <ul role="list">
-            <li><strong>606:</strong> compras y gastos, ITBIS, retenciones</li>
-            <li><strong>607:</strong> ventas y operaciones</li>
-            <li><strong>608:</strong> NCF anulados con motivo</li>
+            <li>606 · 607 · 608 · IT-1</li>
+            <li>IR-3 · IR-17 · retenciones</li>
+            <li>TSS y procesamiento de nómina</li>
+            <li>e-CF y NCF</li>
             <li>Pre-validación y control de errores</li>
           </ul>
         </article>
 
-        <article class="service">
-          <div class="service__num">04</div>
-          <h3>Gestión de Cuentas por Cobrar</h3>
-          <p>Reduzca su DSO con un proceso disciplinado de cobranza.</p>
+        <article class="pillar-main">
+          <div class="pillar-main__num">03</div>
+          <h3>Sistemas y automatización</h3>
+          <p>Configuramos y conectamos las herramientas que sostienen su operación.</p>
           <ul role="list">
-            <li>Análisis de antigüedad (aging)</li>
-            <li>Aplicación de cobros, NC y ND</li>
-            <li>Recordatorios y estados de cuenta</li>
-            <li>Reportes ejecutivos de cartera</li>
+            <li>Implementación ADM Cloud y QuickBooks</li>
+            <li>Catálogo de cuentas y configuración fiscal</li>
+            <li>Integración bancaria e importaciones</li>
+            <li>Flujos de aprobación y APIs</li>
+            <li>Automatización con supervisión humana</li>
           </ul>
         </article>
 
-        <article class="service">
-          <div class="service__num">05</div>
-          <h3>Procesamiento de Nómina</h3>
-          <p>Cálculo de nómina, novedades, reportes y archivos de soporte.</p>
+        <article class="pillar-main">
+          <div class="pillar-main__num">04</div>
+          <h3>FP&amp;A e inteligencia financiera</h3>
+          <p>De los números del mes a decisiones gerenciales accionables.</p>
           <ul role="list">
-            <li>Cálculo quincenal o mensual</li>
-            <li>TSS, ISR y descuentos</li>
-            <li>Volantes de pago y reportes</li>
-            <li>Archivos de banca electrónica</li>
+            <li>Presupuestos y forecasts</li>
+            <li>Análisis de variaciones y márgenes</li>
+            <li>Cash flow forecasting</li>
+            <li>Dashboards y KPIs</li>
+            <li>Reporting gerencial y modelos financieros</li>
           </ul>
         </article>
+      </div>
 
-        <article class="service">
-          <div class="service__num">06</div>
-          <h3>Dashboards, FP&A y Automatizaciones</h3>
-          <p>Datos accionables para decisiones gerenciales en tiempo real.</p>
-          <ul role="list">
-            <li>Ventas por tienda, margen y rotación</li>
-            <li>Aging y cash conversion</li>
-            <li>Importaciones automatizadas y APIs</li>
-            <li>Flujos de aprobación digitales</li>
-          </ul>
+      <aside class="tech-note">
+        <strong>Soluciones tecnológicas especiales.</strong>
+        Portales B2B, integraciones ERP, workflows y aplicaciones financieras internas se cotizan como proyectos a medida — subordinados a una operación financiera ya controlada.
+      </aside>
+    </div>
+  </section>
+
+  <!-- =================== SISTEMAS =================== -->
+  <section class="section section--light" id="sistemas">
+    <div class="container">
+      <div class="section__head section__head--center">
+        <span class="eyebrow eyebrow--dark">Herramientas</span>
+        <h2 class="section__title section__title--center">Trabajamos sobre las herramientas que utiliza su empresa</h2>
+        <p class="section__sub">Sin alianzas publicitarias: experiencia operativa en los sistemas que ya usa (o que necesita implementar).</p>
+      </div>
+
+      <div class="systems-grid">
+        <article class="system-card">
+          <h3>ADM Cloud</h3>
+          <p>Implementación, configuración contable y fiscal, catálogo de cuentas, NCF, e-CF, inventarios, CxC/CxP, conciliaciones y automatización de procesos.</p>
         </article>
+        <article class="system-card">
+          <h3>QuickBooks</h3>
+          <p>Configuración, migración, bookkeeping, conciliación bancaria, cierres financieros, reporting y automatización.</p>
+        </article>
+      </div>
 
-        <article class="service service--wide">
-          <div class="service__num">07</div>
-          <h3>Desarrollo de Portales B2B</h3>
-          <p>Portal semi-custom para creación de pedidos / órdenes de compra y sincronización directa con su ERP. Habilite a sus clientes corporativos sin perder control.</p>
-          <ul role="list" class="service__tags">
-            <li>Pedidos online</li>
-            <li>OC digitales</li>
-            <li>Sync con ERP</li>
-            <li>Roles y aprobaciones</li>
-          </ul>
+      <ul class="systems-tags" role="list">
+        <li>Excel</li>
+        <li>Power BI</li>
+        <li>Bancos</li>
+        <li>DGII</li>
+        <li>TSS</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- =================== CÓMO TRABAJAMOS =================== -->
+  <section class="section section--soft" id="proceso">
+    <div class="container">
+      <div class="section__head section__head--center">
+        <span class="eyebrow eyebrow--dark">Cómo trabajamos</span>
+        <h2 class="section__title section__title--center">Un proceso predecible, sin sorpresas.</h2>
+      </div>
+
+      <ol class="process" role="list">
+        <li class="process__step">
+          <div class="process__num">1</div>
+          <h3>Diagnóstico</h3>
+          <p>Revisamos su operación, sistemas, riesgos y objetivos. Sin compromiso.</p>
+        </li>
+        <li class="process__step">
+          <div class="process__num">2</div>
+          <h3>Diseño</h3>
+          <p>Definimos alcance, entregables, controles y precio en una propuesta clara.</p>
+        </li>
+        <li class="process__step">
+          <div class="process__num">3</div>
+          <h3>Implementación</h3>
+          <p>Configuramos sistemas, migramos data, documentamos y capacitamos al equipo.</p>
+        </li>
+        <li class="process__step">
+          <div class="process__num">4</div>
+          <h3>Operación</h3>
+          <p>Cierre mensual, cumplimiento y reportería con revisión continua.</p>
+        </li>
+        <li class="process__step">
+          <div class="process__num">5</div>
+          <h3>Mejora continua</h3>
+          <p>Automatizamos lo repetitivo y elevamos el control y la visibilidad gerencial.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- =================== RESULTADOS =================== -->
+  <section class="section section--light" id="resultados">
+    <div class="container">
+      <div class="section__head section__head--center">
+        <span class="eyebrow eyebrow--dark">Resultados</span>
+        <h2 class="section__title section__title--center">Tipos de trabajo que resolvemos</h2>
+        <p class="section__sub">Casos representativos del tipo de operación que estructuramos. Métricas específicas se comparten en diagnóstico, con evidencia verificable.</p>
+      </div>
+
+      <div class="cases-grid">
+        <article class="case-card">
+          <span class="case-card__label">Distribución</span>
+          <h3>Empresa de distribución</h3>
+          <p>Reestructuración de contabilidad operativa, conciliación bancaria, cumplimiento DGII y configuración de ERP para mejorar la trazabilidad mensual.</p>
+        </article>
+        <article class="case-card">
+          <span class="case-card__label">Servicios</span>
+          <h3>Empresa de servicios profesionales</h3>
+          <p>Implementación de procesos contables y fiscales, nómina, TSS y reportería gerencial para operar con cierres predecibles.</p>
+        </article>
+        <article class="case-card">
+          <span class="case-card__label">Alto volumen</span>
+          <h3>Empresa con alto volumen transaccional</h3>
+          <p>Estandarización del cierre mensual, identificación de diferencias bancarias y automatización de controles recurrentes.</p>
         </article>
       </div>
     </div>
   </section>
 
   <!-- =================== PRECIOS =================== -->
-  <section class="section section--light" id="precios">
+  <section class="section section--soft" id="precios">
     <div class="container">
       <div class="section__head section__head--center">
-        <span class="eyebrow eyebrow--dark">Precios transparentes</span>
-        <h2 class="section__title">Tarifas claras según el tamaño de su operación.</h2>
-        <p class="section__sub">Pague por lo que usa. Crezca y nosotros escalamos con usted.</p>
+        <span class="eyebrow eyebrow--dark">Planes</span>
+        <h2 class="section__title section__title--center">Planes de contabilidad mensual desde RD$15,000</h2>
+        <p class="section__sub">
+          La tarifa final depende del volumen de transacciones, número de cuentas bancarias, entidades, inventarios, nómina, monedas y complejidad operativa.
+          Las bandas siguientes son una referencia — no una cotización automática.
+        </p>
       </div>
 
-      <div class="pricing-grid">
-
+      <div class="pricing-grid pricing-grid--single">
         <div class="price-card">
           <header>
-            <h3>Contabilidad Mensual</h3>
-            <p>Según volumen de transacciones por mes.</p>
+            <h3>Referencia de contabilidad mensual</h3>
+            <p>Según volumen aproximado de transacciones por mes.</p>
           </header>
           <table class="price-table">
             <thead>
               <tr>
                 <th>Transacciones / Mes</th>
-                <th>Cuota Mensual</th>
+                <th>Desde</th>
               </tr>
             </thead>
             <tbody>
@@ -290,87 +327,88 @@
               </tr>
             </tbody>
           </table>
-          <a href="#contacto" class="btn btn--primary btn--full">Cotizar mi volumen</a>
-        </div>
-
-        <div class="price-card">
-          <header>
-            <h3>Gestión de Cuentas por Cobrar</h3>
-            <p>Tres modalidades según escala de cartera.</p>
-          </header>
-          <div class="tier-grid">
-            <div class="tier">
-              <span class="tier__name">Small</span>
-              <span class="tier__price">desde <strong>RD$ 12,000</strong><small>/mes</small></span>
-              <ul role="list">
-                <li>Aging mensual</li>
-                <li>Recordatorios estándar</li>
-                <li>Reportes básicos</li>
-              </ul>
-            </div>
-            <div class="tier tier--featured">
-              <span class="tier__badge">Popular</span>
-              <span class="tier__name">Mid</span>
-              <span class="tier__price">desde <strong>RD$ 20,000</strong><small>/mes</small></span>
-              <ul role="list">
-                <li>Aging semanal</li>
-                <li>Estados de cuenta</li>
-                <li>Gestión NC / ND</li>
-                <li>Tablero de cartera</li>
-              </ul>
-            </div>
-            <div class="tier">
-              <span class="tier__name">Enterprise</span>
-              <span class="tier__price">desde <strong>RD$ 35,000</strong><small>/mes</small></span>
-              <ul role="list">
-                <li>Aging en vivo</li>
-                <li>Gestión multi-entidad</li>
-                <li>Integración ERP</li>
-                <li>Reporting ejecutivo</li>
-              </ul>
-            </div>
-          </div>
-          <a href="#contacto" class="btn btn--primary btn--full">Hablar con un asesor</a>
+          <a href="#contacto" class="btn btn--navy btn--full">Solicitar diagnóstico y cotización</a>
         </div>
       </div>
 
       <p class="price-foot">
-        Otros servicios (Implementación, DGII, Nómina, FP&A y Portales B2B) se cotizan según alcance.
+        Cumplimiento fiscal, nómina, implementación de sistemas, FP&amp;A e integraciones se cotizan según alcance.
         <a href="#contacto">Solicite una propuesta personalizada →</a>
       </p>
     </div>
   </section>
 
-  <!-- =================== PROCESO =================== -->
-  <section class="section section--soft" id="proceso">
+  <!-- =================== POR QUÉ NUVEM =================== -->
+  <section class="section section--light" id="diferenciadores">
     <div class="container">
       <div class="section__head section__head--center">
-        <span class="eyebrow eyebrow--dark">Cómo trabajamos</span>
-        <h2 class="section__title">Un proceso simple, predecible y sin sorpresas.</h2>
+        <span class="eyebrow eyebrow--dark">Por qué Nuvem</span>
+        <h2 class="section__title section__title--center">Qué nos hace diferentes</h2>
       </div>
 
-      <ol class="process" role="list">
-        <li class="process__step">
-          <div class="process__num">1</div>
-          <h3>Diagnóstico inicial</h3>
-          <p>Conversamos sobre su operación, retos y objetivos. Sin compromiso.</p>
-        </li>
-        <li class="process__step">
-          <div class="process__num">2</div>
-          <h3>Propuesta a medida</h3>
-          <p>Definimos alcance, entregables y precio en una propuesta clara.</p>
-        </li>
-        <li class="process__step">
-          <div class="process__num">3</div>
-          <h3>Onboarding 30 días</h3>
-          <p>Configuramos sistemas, migramos data y capacitamos a su equipo.</p>
-        </li>
-        <li class="process__step">
-          <div class="process__num">4</div>
-          <h3>Operación y mejora continua</h3>
-          <p>Cierre mensual, cumplimiento DGII y revisión gerencial trimestral.</p>
-        </li>
-      </ol>
+      <div class="diff-grid">
+        <article class="diff-card">
+          <h3>Operación real</h3>
+          <p>No solo entregamos recomendaciones. Ejecutamos procesos contables y financieros.</p>
+        </article>
+        <article class="diff-card">
+          <h3>Tecnología</h3>
+          <p>Trabajamos directamente con ERP, bancos, hojas de cálculo, APIs y automatizaciones.</p>
+        </article>
+        <article class="diff-card">
+          <h3>Contexto dominicano</h3>
+          <p>DGII, TSS, e-CF, NCF, 606, 607, 608, IT-1, IR-3 e IR-17 — en el idioma de su operación.</p>
+        </article>
+        <article class="diff-card">
+          <h3>Control y trazabilidad</h3>
+          <p>Procesos documentados, revisiones y controles antes de modificar información sensible.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== CONÓCENOS =================== -->
+  <section class="section section--soft conocenos" id="conocenos">
+    <div class="container grid-2 grid-2--conocenos">
+      <figure class="conocenos__photo">
+        <img
+          src="images/founder.png"
+          alt="Fundador de NuVEM"
+          width="480"
+          height="640"
+          loading="lazy"
+        />
+      </figure>
+      <div class="conocenos__content">
+        <span class="eyebrow eyebrow--dark">Conócenos</span>
+        <h2 class="section__title">Su equipo financiero externo, con rigor y cercanía.</h2>
+        <p class="lead">
+          Nuvem es el equipo financiero y contable externo de una PYME, respaldado por tecnología, automatización y conocimiento operativo del ecosistema dominicano.
+        </p>
+        <p>
+          Actuamos como una extensión de su equipo financiero: ejecutamos, controlamos y mejoramos los procesos que sostienen sus decisiones — con la disciplina de una firma y la agilidad de un equipo interno.
+        </p>
+        <ul class="conocenos__highlights" role="list">
+          <li>Operación contable y fiscal ejecutada, no solo asesorada</li>
+          <li>Sistemas configurados para su realidad (ADM Cloud / QuickBooks)</li>
+          <li>Reportería y controles con trazabilidad</li>
+        </ul>
+        <a href="#contacto" class="btn btn--navy">Solicitar diagnóstico</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== TECNOLOGÍA =================== -->
+  <section class="section section--light" id="tecnologia">
+    <div class="container tech-band">
+      <div>
+        <span class="eyebrow eyebrow--dark">Tecnología</span>
+        <h2 class="section__title">Tecnología aplicada a la operación financiera</h2>
+        <p>
+          Nuvem desarrolla automatizaciones y herramientas inteligentes para reducir tareas repetitivas, mejorar controles y acelerar procesos contables, manteniendo supervisión humana sobre operaciones sensibles.
+        </p>
+        <p class="tech-band__note">La IA es un medio para más control y menos trabajo manual — no el producto que usted compra. El resultado que busca es contabilidad correcta, cierres oportunos y cumplimiento sin fricción.</p>
+      </div>
     </div>
   </section>
 
@@ -378,19 +416,23 @@
   <section class="cta-band">
     <div class="container cta-band__inner">
       <div>
-        <h2>Estamos listos para ofrecer soluciones financieras de clase mundial en República Dominicana. Permítanos ayudarle a planificar el mañana.</h2>
+        <h2>Hablemos de su operación financiera.</h2>
+        <p>Diagnóstico sin compromiso. Le diremos qué estructurar primero y qué implica en tiempo y costo.</p>
       </div>
-      <a href="#nosotros" class="btn btn--nav btn--lg">Conózcanos</a>
+      <div class="cta-band__actions">
+        <a href="#contacto" class="btn btn--nav btn--lg">Solicitar diagnóstico</a>
+        <a id="whatsappCta" href="https://wa.me/18493561320" target="_blank" rel="noopener noreferrer" class="btn btn--outline-light btn--lg">Hablar por WhatsApp</a>
+      </div>
     </div>
   </section>
 
-  <!-- =================== CONTACTO =================== -->
+  <!-- =================== CONTACTO / DIAGNÓSTICO =================== -->
   <section class="section section--light" id="contacto">
     <div class="container grid-2 grid-2--contact">
       <div>
-        <span class="eyebrow eyebrow--dark">Contacto</span>
-        <h2 class="section__title">Hablemos de su próximo cierre.</h2>
-        <p class="lead">Cuéntenos brevemente sobre su empresa y le responderemos en menos de 24 horas.</p>
+        <span class="eyebrow eyebrow--dark">Diagnóstico</span>
+        <h2 class="section__title">Solicite un diagnóstico financiero</h2>
+        <p class="lead">Cuéntenos cómo opera hoy. Con eso calificamos el alcance antes de la reunión y le respondemos en menos de 24 horas.</p>
 
         <ul class="contact-info" role="list">
           <li>
@@ -399,16 +441,25 @@
             </span>
             <div>
               <strong>Email</strong>
-              <a href="mailto:hola@nuvem.do">hola@nuvem.do</a>
+              <a href="mailto:vemendez@nuvem.com.do">vemendez@nuvem.com.do</a>
             </div>
           </li>
           <li>
             <span class="contact-info__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92V21a1 1 0 01-1.11 1 19.94 19.94 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.94 19.94 0 013.18 4.11 1 1 0 014.17 3h4.09a1 1 0 011 .75c.13.62.32 1.23.56 1.81a1 1 0 01-.22 1.05L7.91 8.31a16 16 0 006 6l1.7-1.7a1 1 0 011.05-.22c.58.24 1.19.43 1.81.56a1 1 0 01.75 1z"/></svg>
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
             </span>
             <div>
-              <strong>Teléfono</strong>
-              <a href="tel:+18095551234">+1 (809) 555-1234</a>
+              <strong>WhatsApp</strong>
+              <a id="whatsappLink" href="https://wa.me/18493561320" target="_blank" rel="noopener noreferrer">+1 (849) 356-1320</a>
+            </div>
+          </li>
+          <li>
+            <span class="contact-info__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </span>
+            <div>
+              <strong>Instagram</strong>
+              <a href="https://instagram.com/nuvem.do" target="_blank" rel="noopener noreferrer">@nuvem.do</a>
             </div>
           </li>
           <li>
@@ -440,29 +491,71 @@
         </div>
         <div class="field-row">
           <div class="field">
-            <label for="phone">Teléfono</label>
-            <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+1 (809) 000-0000" />
+            <label for="whatsapp">WhatsApp</label>
+            <input id="whatsapp" name="whatsapp" type="tel" autocomplete="tel" placeholder="+1 (849) 356-1320" />
           </div>
           <div class="field">
-            <label for="service">Servicio de interés</label>
+            <label for="system">Sistema contable actual</label>
+            <select id="system" name="system" required>
+              <option value="">Seleccione…</option>
+              <option>ADM Cloud</option>
+              <option>QuickBooks</option>
+              <option>Excel</option>
+              <option>Otro</option>
+              <option>Ninguno</option>
+            </select>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="volume">Volumen aproximado mensual</label>
+            <select id="volume" name="volume" required>
+              <option value="">Seleccione…</option>
+              <option>Hasta 100 transacciones</option>
+              <option>101 – 300</option>
+              <option>301 – 500</option>
+              <option>Más de 500</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="banks">N.º de cuentas bancarias</label>
+            <select id="banks" name="banks">
+              <option value="">Seleccione…</option>
+              <option>1</option>
+              <option>2 – 3</option>
+              <option>4 – 5</option>
+              <option>Más de 5</option>
+            </select>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="employees">N.º aproximado de empleados</label>
+            <select id="employees" name="employees">
+              <option value="">Seleccione…</option>
+              <option>1 – 10</option>
+              <option>11 – 30</option>
+              <option>31 – 50</option>
+              <option>Más de 50</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="service">Servicio prioritario</label>
             <select id="service" name="service" required>
               <option value="">Seleccione…</option>
-              <option>Implementación / Onboarding</option>
-              <option>Contabilidad Mensual</option>
-              <option>Cumplimiento DGII (606/607/608)</option>
-              <option>Cuentas por Cobrar</option>
-              <option>Nómina</option>
-              <option>Dashboards / FP&A</option>
-              <option>Portal B2B</option>
-              <option>Otro</option>
+              <option>Contabilidad y cierre</option>
+              <option>Cumplimiento fiscal y nómina</option>
+              <option>Sistemas y automatización</option>
+              <option>FP&amp;A e inteligencia financiera</option>
+              <option>Diagnóstico integral</option>
             </select>
           </div>
         </div>
         <div class="field">
-          <label for="message">¿En qué podemos ayudarle?</label>
-          <textarea id="message" name="message" rows="4" placeholder="Cuéntenos brevemente sobre su operación…"></textarea>
+          <label for="message">Principal problema financiero o contable</label>
+          <textarea id="message" name="message" rows="3" required placeholder="Ej.: conciliaciones atrasadas, ERP mal configurado, falta de estados a tiempo…"></textarea>
         </div>
-        <button type="submit" class="btn btn--primary btn--lg btn--full">Enviar solicitud</button>
+        <button type="submit" class="btn btn--navy btn--lg btn--full">Enviar diagnóstico</button>
         <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
       </form>
     </div>
@@ -475,37 +568,35 @@
         <a href="#top" class="brand brand--light">
           <img src="logos/nuvem-logo-white.png" alt="NuVEM · Inteligencia Financiera" class="brand__logo" width="200" height="60" />
         </a>
-        <p>Su socio de inteligencia financiera en República Dominicana. Contabilidad, cumplimiento y data — al servicio de su crecimiento.</p>
+        <p>Equipo financiero y contable externo para PYMES en República Dominicana. Contabilidad, cumplimiento, sistemas y automatización.</p>
       </div>
 
       <div>
-        <h4>Servicios</h4>
+        <h4>Pilares</h4>
         <ul role="list">
-          <li><a href="#servicios">Implementación</a></li>
-          <li><a href="#servicios">Contabilidad mensual</a></li>
-          <li><a href="#servicios">Cumplimiento DGII</a></li>
-          <li><a href="#servicios">Cuentas por cobrar</a></li>
-          <li><a href="#servicios">Nómina</a></li>
-          <li><a href="#servicios">FP&A y Dashboards</a></li>
-          <li><a href="#servicios">Portales B2B</a></li>
+          <li><a href="#pilares">Contabilidad y cierre</a></li>
+          <li><a href="#pilares">Fiscal y nómina</a></li>
+          <li><a href="#pilares">Sistemas y automatización</a></li>
+          <li><a href="#pilares">FP&amp;A</a></li>
         </ul>
       </div>
 
       <div>
         <h4>Empresa</h4>
         <ul role="list">
-          <li><a href="#nosotros">Quiénes somos</a></li>
+          <li><a href="#conocenos">Conócenos</a></li>
           <li><a href="#proceso">Cómo trabajamos</a></li>
-          <li><a href="#precios">Precios</a></li>
-          <li><a href="#contacto">Contacto</a></li>
+          <li><a href="#precios">Planes</a></li>
+          <li><a href="#contacto">Diagnóstico</a></li>
         </ul>
       </div>
 
       <div>
         <h4>Contacto</h4>
         <ul role="list" class="footer__contact">
-          <li><a href="mailto:hola@nuvem.do">hola@nuvem.do</a></li>
-          <li><a href="tel:+18095551234">+1 (809) 555-1234</a></li>
+          <li><a href="mailto:vemendez@nuvem.com.do">vemendez@nuvem.com.do</a></li>
+          <li><a href="https://wa.me/18493561320" target="_blank" rel="noopener noreferrer">+1 (849) 356-1320</a></li>
+          <li><a href="https://instagram.com/nuvem.do" target="_blank" rel="noopener noreferrer">Instagram @nuvem.do</a></li>
           <li>Santo Domingo, R.D.</li>
         </ul>
       </div>
@@ -514,7 +605,7 @@
     <div class="footer__bottom">
       <div class="container">
         <span>© <span id="year">2026</span> Nuvem · Todos los derechos reservados.</span>
-        <span>Hecho con rigor financiero en República Dominicana.</span>
+        <span>Operación financiera con control y trazabilidad · República Dominicana.</span>
       </div>
     </div>
   </footer>

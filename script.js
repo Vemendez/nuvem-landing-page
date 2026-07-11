@@ -4,11 +4,28 @@
 (() => {
   'use strict';
 
-  /* ----- Año dinámico en footer ----- */
+  /* WhatsApp Business — reemplaza con tu número real (solo dígitos, con código país).
+     Ejemplo República Dominicana: '18095551234' */
+  const WHATSAPP_NUMBER = '18493561320';
+
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  /* ----- Navbar: sombra al hacer scroll ----- */
+  const whatsappHref = WHATSAPP_NUMBER
+    ? `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Hola NuVEM, quiero solicitar un diagnóstico financiero.')}`
+    : '#contacto';
+
+  ['whatsappCta', 'whatsappLink'].forEach((id) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.setAttribute('href', whatsappHref);
+    if (WHATSAPP_NUMBER) {
+      el.setAttribute('target', '_blank');
+      el.setAttribute('rel', 'noopener noreferrer');
+      if (id === 'whatsappLink') el.textContent = '+1 (849) 356-1320';
+    }
+  });
+
   const nav = document.getElementById('nav');
   const onScroll = () => {
     if (!nav) return;
@@ -17,7 +34,6 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  /* ----- Menú móvil ----- */
   const burger = document.getElementById('navBurger');
   const navLinks = document.getElementById('navLinks');
 
@@ -31,7 +47,7 @@
     burger.setAttribute('aria-expanded', String(isOpen));
   });
 
-  navLinks?.querySelectorAll('a').forEach(a => {
+  navLinks?.querySelectorAll('a').forEach((a) => {
     a.addEventListener('click', closeMenu);
   });
 
@@ -39,28 +55,28 @@
     if (e.key === 'Escape') closeMenu();
   });
 
-  /* ----- Reveal on scroll ----- */
   const revealTargets = document.querySelectorAll(
-    '.hero__copy, .hero__media, .services-intro__card, .about-split__media img, .quote-card, .pillar, .service, .price-card, .process__step, .contact-form, .cta-band__inner'
+    '.hero__copy, .hero__media, .problem-card, .pillar-main, .system-card, .case-card, .diff-card, .conocenos__photo, .conocenos__content, .price-card, .process__step, .contact-form, .cta-band__inner, .tech-band'
   );
-  revealTargets.forEach(el => el.classList.add('reveal'));
+  revealTargets.forEach((el) => el.classList.add('reveal'));
 
   if ('IntersectionObserver' in window) {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
-    revealTargets.forEach(el => io.observe(el));
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+    );
+    revealTargets.forEach((el) => io.observe(el));
   } else {
-    revealTargets.forEach(el => el.classList.add('is-visible'));
+    revealTargets.forEach((el) => el.classList.add('is-visible'));
   }
 
-  /* ----- Formulario de contacto ----- */
   const form = document.getElementById('contactForm');
   const note = document.getElementById('formNote');
 
@@ -78,7 +94,7 @@
     const data = new FormData(form);
     let hasError = false;
 
-    ['name', 'company', 'email', 'service'].forEach(field => {
+    ['name', 'company', 'email', 'system', 'volume', 'service', 'message'].forEach((field) => {
       const input = form.elements.namedItem(field);
       if (!input) return;
       const val = (data.get(field) || '').toString().trim();
@@ -98,13 +114,13 @@
       submitBtn.textContent = 'Enviando…';
     }
 
-    // Simulación de envío. En producción, conectar a backend / Formspree / email service.
+    // Simulación de envío. En producción: Formspree / EmailJS / backend.
     setTimeout(() => {
-      setNote('¡Gracias! Recibimos su solicitud. Le contactaremos en menos de 24 horas.', 'success');
+      setNote('¡Gracias! Recibimos su diagnóstico. Le contactaremos en menos de 24 horas.', 'success');
       form.reset();
       if (submitBtn) {
         submitBtn.disabled = false;
-        submitBtn.textContent = 'Enviar solicitud';
+        submitBtn.textContent = 'Enviar diagnóstico';
       }
     }, 800);
   });
