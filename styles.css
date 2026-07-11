@@ -458,26 +458,23 @@ img, svg { max-width: 100%; display: block; }
 .eco-logo {
   display: inline-flex;
   align-items: center;
-  gap: .55rem;
-  padding: .65rem 1rem;
+  gap: .65rem;
+  padding: .75rem 1.1rem;
   background: var(--white);
   border: 1px solid var(--ink-200);
-  min-width: 140px;
-  justify-content: center;
+  min-width: 150px;
+  justify-content: flex-start;
+  transition: border-color .2s var(--ease), box-shadow .2s var(--ease);
 }
-.eco-logo__mark {
+.eco-logo:hover {
+  border-color: var(--ink-300);
+  box-shadow: var(--shadow-sm);
+}
+.eco-logo img {
   width: 32px;
   height: 32px;
-  border-radius: 6px;
-  background: var(--header-bg);
-  color: var(--white);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: .65rem;
-  font-weight: 800;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 .eco-logo__name {
   font-size: .9rem;
@@ -1305,8 +1302,13 @@ img, svg { max-width: 100%; display: block; }
 }
 
 .pricing-grid--single {
+  grid-template-columns: 1fr;
   max-width: 560px;
+  width: 100%;
   margin-inline: auto;
+}
+.pricing-grid--single .price-card {
+  width: 100%;
 }
 
 /* ---------- Contacto ---------- */
