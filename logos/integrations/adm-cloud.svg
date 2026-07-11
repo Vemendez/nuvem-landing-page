@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="ADM Cloud">
+  <rect width="64" height="64" rx="14" fill="#0B1E3F"/>
+  <path d="M20 40c-4.4 0-8-3.1-8-7s3.6-7 8-7c.8-5 5.2-8.8 10.4-8.8 4.6 0 8.5 2.8 10 6.8.6-.2 1.3-.3 2-.3 4.4 0 8 3.1 8 7s-3.6 7-8 7H20z" fill="#E07030"/>
+  <text x="32" y="52" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#fff" letter-spacing="1">ADM</text>
+</svg>
