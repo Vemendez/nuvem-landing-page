@@ -9,7 +9,10 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://assets.calendly.com" />
+  <link rel="preconnect" href="https://calendly.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
 
   <link rel="stylesheet" href="styles.css" />
 
@@ -33,7 +36,7 @@
         <a href="#contacto">Evaluación</a>
       </nav>
 
-      <a href="#contacto" class="btn btn--nav nav__cta">Agenda una evaluación</a>
+      <a href="#contacto" class="btn btn--nav nav__cta" data-calendly>Agenda una evaluación</a>
 
       <button class="nav__burger" id="navBurger" aria-label="Abrir menú" aria-controls="navLinks" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -65,7 +68,7 @@
         Su equipo financiero externo: ERP en orden, contabilidad al día, impuestos sin fricción y dashboards para decidir. Menos trabajo manual. Más claridad.
       </p>
       <div class="hero__actions">
-        <a href="#contacto" class="btn btn--nav btn--lg">Agenda una evaluación</a>
+        <a href="#contacto" class="btn btn--nav btn--lg" data-calendly>Agenda una evaluación</a>
         <a href="#proceso" class="btn btn--outline-light btn--lg">Cómo trabajamos</a>
       </div>
     </div>
@@ -349,13 +352,13 @@
               </tr>
             </tbody>
           </table>
-          <a href="#contacto" class="btn btn--navy btn--full">Solicitar diagnóstico y cotización</a>
+          <a href="#contacto" class="btn btn--navy btn--full" data-calendly>Solicitar diagnóstico y cotización</a>
         </div>
       </div>
 
       <p class="price-foot">
         Cumplimiento fiscal, nómina, implementación de sistemas, FP&amp;A e integraciones se cotizan según alcance.
-        <a href="#contacto">Solicite una propuesta personalizada →</a>
+        <a href="#contacto" data-calendly>Solicite una propuesta personalizada →</a>
       </p>
     </div>
   </section>
@@ -415,7 +418,7 @@
           <li>Sistemas configurados para su realidad (ADM Cloud / QuickBooks)</li>
           <li>Reportería y controles con trazabilidad</li>
         </ul>
-        <a href="#contacto" class="btn btn--navy">Solicitar diagnóstico</a>
+        <a href="#contacto" class="btn btn--navy" data-calendly>Solicitar diagnóstico</a>
       </div>
     </div>
   </section>
@@ -428,7 +431,7 @@
         <p>Deje el trabajo operativo a las máquinas y recupere el control estratégico. Nuvem ejecuta, controla y automatiza su back-office financiero — con trazabilidad y supervisión humana donde importa.</p>
       </div>
       <div class="cta-band__actions">
-        <a href="#contacto" class="btn btn--nav btn--lg">Agenda una evaluación</a>
+        <a href="#contacto" class="btn btn--nav btn--lg" data-calendly>Agenda una evaluación</a>
         <a id="whatsappCta" href="https://wa.me/18493561320" target="_blank" rel="noopener noreferrer" class="btn btn--outline-light btn--lg">Hablar por WhatsApp</a>
       </div>
     </div>
@@ -440,7 +443,7 @@
       <div>
         <span class="eyebrow eyebrow--dark">Evaluación</span>
         <h2 class="section__title">Agenda una evaluación financiera</h2>
-        <p class="lead">Cuéntenos cómo opera hoy. Con eso calificamos el alcance antes de la reunión y le respondemos en menos de 24 horas.</p>
+        <p class="lead">Elija el horario que le quede mejor. En la reunión revisamos su operación, el alcance y los siguientes pasos — sin compromiso.</p>
 
         <ul class="contact-info" role="list">
           <li>
@@ -482,90 +485,12 @@
         </ul>
       </div>
 
-      <form class="contact-form" id="contactForm" novalidate>
-        <div class="field">
-          <label for="name">Nombre completo</label>
-          <input id="name" name="name" type="text" required autocomplete="name" placeholder="Juan Pérez" />
-        </div>
-        <div class="field-row">
-          <div class="field">
-            <label for="company">Empresa</label>
-            <input id="company" name="company" type="text" required placeholder="Mi Empresa SRL" />
-          </div>
-          <div class="field">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" required autocomplete="email" placeholder="juan@empresa.com" />
-          </div>
-        </div>
-        <div class="field-row">
-          <div class="field">
-            <label for="whatsapp">WhatsApp</label>
-            <input id="whatsapp" name="whatsapp" type="tel" autocomplete="tel" placeholder="+1 (849) 356-1320" />
-          </div>
-          <div class="field">
-            <label for="system">Sistema contable actual</label>
-            <select id="system" name="system" required>
-              <option value="">Seleccione…</option>
-              <option>ADM Cloud</option>
-              <option>QuickBooks</option>
-              <option>Excel</option>
-              <option>Otro</option>
-              <option>Ninguno</option>
-            </select>
-          </div>
-        </div>
-        <div class="field-row">
-          <div class="field">
-            <label for="volume">Volumen aproximado mensual</label>
-            <select id="volume" name="volume" required>
-              <option value="">Seleccione…</option>
-              <option>Hasta 100 transacciones</option>
-              <option>101 – 300</option>
-              <option>301 – 500</option>
-              <option>Más de 500</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="banks">N.º de cuentas bancarias</label>
-            <select id="banks" name="banks">
-              <option value="">Seleccione…</option>
-              <option>1</option>
-              <option>2 – 3</option>
-              <option>4 – 5</option>
-              <option>Más de 5</option>
-            </select>
-          </div>
-        </div>
-        <div class="field-row">
-          <div class="field">
-            <label for="employees">N.º aproximado de empleados</label>
-            <select id="employees" name="employees">
-              <option value="">Seleccione…</option>
-              <option>1 – 10</option>
-              <option>11 – 30</option>
-              <option>31 – 50</option>
-              <option>Más de 50</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="service">Servicio prioritario</label>
-            <select id="service" name="service" required>
-              <option value="">Seleccione…</option>
-              <option>Contabilidad y cierre</option>
-              <option>Cumplimiento fiscal y nómina</option>
-              <option>Sistemas y automatización</option>
-              <option>FP&amp;A e inteligencia financiera</option>
-              <option>Diagnóstico integral</option>
-            </select>
-          </div>
-        </div>
-        <div class="field">
-          <label for="message">Principal problema financiero o contable</label>
-          <textarea id="message" name="message" rows="3" required placeholder="Ej.: conciliaciones atrasadas, ERP mal configurado, falta de estados a tiempo…"></textarea>
-        </div>
-        <button type="submit" class="btn btn--navy btn--lg btn--full">Enviar diagnóstico</button>
-        <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
-      </form>
+      <div class="calendly-card" aria-label="Calendario para agendar una evaluación">
+        <div id="calendlyEmbed"></div>
+        <p class="calendly-fallback" id="calendlyFallback">
+          <a id="calendlyFallbackLink" href="#contacto">Abrir Calendly en una pestaña nueva</a>
+        </p>
+      </div>
     </div>
   </section>
 
@@ -618,6 +543,7 @@
     </div>
   </footer>
 
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
   <script src="script.js"></script>
 </body>
 </html>

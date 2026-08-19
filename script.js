@@ -8,6 +8,11 @@
      Ejemplo República Dominicana: '18095551234' */
   const WHATSAPP_NUMBER = '18493561320';
 
+  /* Calendly — enlace del tipo de evento (no solo el perfil).
+     En Calendly: Event type → Share → Copy link.
+     Ejemplo: 'https://calendly.com/nuvem/evaluacion-financiera' */
+  const CALENDLY_URL = 'https://calendly.com/vemendez-nuvem/30min';
+
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
@@ -68,7 +73,7 @@
   });
 
   const revealTargets = document.querySelectorAll(
-    '.eco-logo, .problem-card, .tech-card, .agent-card, .case-card, .diff-card, .conocenos__photo, .conocenos__content, .price-card, .process__step, .contact-form, .cta-band__inner'
+    '.eco-logo, .problem-card, .tech-card, .agent-card, .case-card, .diff-card, .conocenos__photo, .conocenos__content, .price-card, .process__step, .calendly-card, .cta-band__inner'
   );
   revealTargets.forEach((el) => el.classList.add('reveal'));
 
@@ -89,51 +94,73 @@
     revealTargets.forEach((el) => el.classList.add('is-visible'));
   }
 
-  const form = document.getElementById('contactForm');
-  const note = document.getElementById('formNote');
-
-  const setNote = (msg, type = '') => {
-    if (!note) return;
-    note.textContent = msg;
-    note.classList.remove('is-success', 'is-error');
-    if (type) note.classList.add(`is-${type}`);
+  const calendlyHref = () => {
+    try {
+      const url = new URL(CALENDLY_URL);
+      if (!url.searchParams.has('hide_gdpr_banner')) url.searchParams.set('hide_gdpr_banner', '1');
+      if (!url.searchParams.has('background_color')) url.searchParams.set('background_color', 'ffffff');
+      if (!url.searchParams.has('text_color')) url.searchParams.set('text_color', '0f172a');
+      if (!url.searchParams.has('primary_color')) url.searchParams.set('primary_color', '0b1e3f');
+      return url.toString();
+    } catch {
+      return CALENDLY_URL;
+    }
   };
 
-  const validateEmail = (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-
-  form?.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const data = new FormData(form);
-    let hasError = false;
-
-    ['name', 'company', 'email', 'system', 'volume', 'service', 'message'].forEach((field) => {
-      const input = form.elements.namedItem(field);
-      if (!input) return;
-      const val = (data.get(field) || '').toString().trim();
-      const invalid = !val || (field === 'email' && !validateEmail(val));
-      input.classList.toggle('is-error', invalid);
-      if (invalid) hasError = true;
-    });
-
-    if (hasError) {
-      setNote('Por favor complete los campos requeridos correctamente.', 'error');
+  const whenCalendlyReady = (callback) => {
+    if (window.Calendly) {
+      callback();
       return;
     }
 
-    const submitBtn = form.querySelector('button[type="submit"]');
-    if (submitBtn) {
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Enviando…';
+    if (!document.querySelector('script[src*="assets.calendly.com/assets/external/widget.js"]')) {
+      const script = document.createElement('script');
+      script.src = 'https://assets.calendly.com/assets/external/widget.js';
+      script.async = true;
+      document.body.appendChild(script);
     }
 
-    // Simulación de envío. En producción: Formspree / EmailJS / backend.
-    setTimeout(() => {
-      setNote('¡Gracias! Recibimos su diagnóstico. Le contactaremos en menos de 24 horas.', 'success');
-      form.reset();
-      if (submitBtn) {
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Enviar diagnóstico';
+    let tries = 0;
+    const timer = setInterval(() => {
+      tries += 1;
+      if (window.Calendly) {
+        clearInterval(timer);
+        callback();
+      } else if (tries > 50) {
+        clearInterval(timer);
       }
-    }, 800);
+    }, 100);
+  };
+
+  const fallback = document.getElementById('calendlyFallback');
+  const fallbackLink = document.getElementById('calendlyFallbackLink');
+  if (fallbackLink && CALENDLY_URL) {
+    fallbackLink.setAttribute('href', CALENDLY_URL);
+    fallbackLink.setAttribute('target', '_blank');
+    fallbackLink.setAttribute('rel', 'noopener noreferrer');
+  }
+
+  const embed = document.getElementById('calendlyEmbed');
+  whenCalendlyReady(() => {
+    if (!embed || !window.Calendly || !CALENDLY_URL) return;
+    window.Calendly.initInlineWidget({
+      url: calendlyHref(),
+      parentElement: embed,
+    });
+    if (fallback) fallback.hidden = true;
+  });
+
+  document.querySelectorAll('[data-calendly]').forEach((el) => {
+    el.addEventListener('click', (e) => {
+      if (!CALENDLY_URL) return;
+      e.preventDefault();
+      whenCalendlyReady(() => {
+        if (!window.Calendly) {
+          window.location.hash = 'contacto';
+          return;
+        }
+        window.Calendly.initPopupWidget({ url: calendlyHref() });
+      });
+    });
   });
 })();
