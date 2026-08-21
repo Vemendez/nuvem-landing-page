@@ -13,7 +13,7 @@
      Ejemplo: 'https://calendly.com/nuvem/evaluacion-financiera' */
   const CALENDLY_URL = 'https://calendly.com/vemendez-nuvem/30min';
 
-  const POWERBI_URL = 'https://app.powerbi.com/view?r=eyJrIjoiOWUyNzVjMjYtNmZjOC00NmNmLWE5NDYtODRlM2JkMjBmNjM4IiwidCI6IjE3NjUwZjM0LTExZDQtNDdlZS05YzQ0LTRhNmQyYWY0ZjE5YiJ9';
+  const POWERBI_URL = 'https://app.powerbi.com/view?r=eyJrIjoiMmNmODQzM2YtYjFhMi00NzczLTk2ODUtN2ZmNTRmNWQ2ODFmIiwidCI6IjE3NjUwZjM0LTExZDQtNDdlZS05YzQ0LTRhNmQyYWY0ZjE5YiJ9';
 
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
