@@ -13,6 +13,8 @@
      Ejemplo: 'https://calendly.com/nuvem/evaluacion-financiera' */
   const CALENDLY_URL = 'https://calendly.com/vemendez-nuvem/30min';
 
+  const POWERBI_URL = 'https://app.powerbi.com/view?r=eyJrIjoiOWUyNzVjMjYtNmZjOC00NmNmLWE5NDYtODRlM2JkMjBmNjM4IiwidCI6IjE3NjUwZjM0LTExZDQtNDdlZS05YzQ0LTRhNmQyYWY0ZjE5YiJ9';
+
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
@@ -149,6 +151,20 @@
     });
     if (fallback) fallback.hidden = true;
   });
+
+  const prefersTouchDashboard = window.matchMedia('(max-width: 720px), (hover: none) and (pointer: coarse)').matches
+    || /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  const dashboardFrame = document.querySelector('.dashboard-frame');
+  const dashboardEmbed = document.querySelector('.dashboard-frame__embed');
+  if (prefersTouchDashboard) {
+    dashboardFrame?.classList.add('is-mobile-fallback');
+    if (dashboardEmbed) {
+      dashboardEmbed.removeAttribute('src');
+      dashboardEmbed.setAttribute('hidden', '');
+    }
+  }
+  const dashboardMobileLink = document.getElementById('dashboardMobileLink');
+  if (dashboardMobileLink) dashboardMobileLink.setAttribute('href', POWERBI_URL);
 
   document.querySelectorAll('[data-calendly]').forEach((el) => {
     el.addEventListener('click', (e) => {
