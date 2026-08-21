@@ -73,7 +73,7 @@
   });
 
   const revealTargets = document.querySelectorAll(
-    '.eco-logo, .problem-card, .tech-card, .agent-card, .case-card, .diff-card, .conocenos__photo, .conocenos__content, .price-card, .process__step, .calendly-card, .cta-band__inner'
+    '.eco-logo, .problem-card, .tech-card, .agent-card, .case-card, .diff-card, .conocenos__photo, .conocenos__content, .price-card, .process__step, .calendly-card, .cta-band__inner, .dashboard-frame'
   );
   revealTargets.forEach((el) => el.classList.add('reveal'));
 
