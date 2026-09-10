@@ -853,7 +853,7 @@ img, svg { max-width: 100%; display: block; }
 
 .ecf__capabilities {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   margin-top: 2.25rem;
 }
