@@ -814,20 +814,6 @@ img, svg { max-width: 100%; display: block; }
   margin-bottom: .85rem;
 }
 
-.ecf__process-link {
-  margin: 0;
-  font-size: .95rem;
-}
-
-.ecf__process-link a {
-  font-weight: 600;
-  color: var(--navy-700);
-}
-
-.ecf__process-link a:hover {
-  color: var(--gold-600);
-}
-
 .ecf__visual {
   margin: 0;
   background: var(--header-bg);
@@ -853,7 +839,7 @@ img, svg { max-width: 100%; display: block; }
 
 .ecf__capabilities {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   margin-top: 2.25rem;
 }
