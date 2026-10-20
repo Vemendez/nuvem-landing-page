@@ -1,12 +1,15 @@
 /* =========================================================
    NUVEM · Programa de vendedores
-   Menú móvil, calculadora de comisión y formulario a WhatsApp
+   Menú móvil, calculadora de comisión y formulario por correo
    ========================================================= */
 (() => {
   'use strict';
 
-  /* Número de WhatsApp que recibe las solicitudes (solo dígitos, con código país). */
-  const WHATSAPP_NUMBER = '18493561320';
+  /* Las solicitudes llegan por correo a través de FormSubmit (formsubmit.co).
+     La primera solicitud envía a este correo un mensaje de activación: hay que
+     abrirlo y confirmar una sola vez. Después, FormSubmit da un código que puede
+     reemplazar el correo en esta dirección para no mostrarlo en el código. */
+  const FORM_ENDPOINT = 'https://formsubmit.co/ajax/vemendez@nuvem.com.do';
   const COMMISSION = 0.10;
   const MONTHS = 12;
 
@@ -58,11 +61,17 @@
   count?.addEventListener('input', updateCalc);
   updateCalc();
 
-  /* ---------- Formulario → WhatsApp ---------- */
+  /* ---------- Formulario → correo ---------- */
   const form = document.getElementById('applyForm');
   const note = document.getElementById('applyNote');
+  const submitBtn = form?.querySelector('button[type="submit"]');
 
-  form?.addEventListener('submit', (e) => {
+  const setNote = (text, kind) => {
+    note.textContent = text;
+    note.className = 'form-note' + (kind ? ' is-' + kind : '');
+  };
+
+  form?.addEventListener('submit', async (e) => {
     e.preventDefault();
     let ok = true;
     form.querySelectorAll('[required]').forEach((el) => {
@@ -71,26 +80,45 @@
       if (!valid) ok = false;
     });
     if (!ok) {
-      note.textContent = 'Completa los campos marcados para continuar.';
-      note.className = 'form-note is-error';
+      setNote('Completa los campos marcados para continuar.', 'error');
       return;
     }
     const d = Object.fromEntries(new FormData(form).entries());
-    const text = [
-      'Hola Nuvem, quiero aplicar al programa de vendedores.',
-      '',
-      `Nombre: ${d.nombre}`,
-      `WhatsApp: ${d.whatsapp}`,
-      `Correo: ${d.correo}`,
-      `Ciudad: ${d.ciudad}`,
-      `A qué me dedico: ${d.ocupacion}`,
-      `Empresas que podría presentar en 3 meses: ${d.empresas}`,
-      d.notas ? `Empresas que conozco: ${d.notas}` : '',
-    ].filter(Boolean).join('\n');
-    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
-    const win = window.open(url, '_blank', 'noopener');
-    if (!win) window.location.href = url;
-    note.textContent = 'Se abrió WhatsApp con tus datos. Solo toca "Enviar".';
-    note.className = 'form-note is-success';
+    if (d._honey) return; // relleno por robots
+
+    const payload = {
+      _subject: `Nuevo vendedor: ${d.nombre} (${d.ciudad})`,
+      _template: 'table',
+      _captcha: 'false',
+      'Nombre': d.nombre,
+      'WhatsApp': d.whatsapp,
+      email: d.correo,
+      'Ciudad o provincia': d.ciudad,
+      'A qué se dedica': d.ocupacion,
+      'Empresas que podría presentar en 3 meses': d.empresas,
+      'Tipo de empresas que conoce': d.notas || '—',
+      'Fecha de la solicitud': new Date().toLocaleString('es-DO', { timeZone: 'America/Santo_Domingo' }),
+    };
+
+    submitBtn.disabled = true;
+    const label = submitBtn.textContent;
+    submitBtn.textContent = 'Enviando…';
+    setNote('', '');
+    try {
+      const res = await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const out = await res.json().catch(() => ({}));
+      if (!res.ok || String(out.success) === 'false') throw new Error(out.message || res.status);
+      form.reset();
+      setNote('¡Listo! Recibimos tu solicitud. Te contactamos en menos de 24 horas.', 'success');
+    } catch (err) {
+      setNote('No se pudo enviar. Inténtalo de nuevo o escríbenos a vemendez@nuvem.com.do.', 'error');
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = label;
+    }
   });
 })();
