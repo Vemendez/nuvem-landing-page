@@ -91,16 +91,17 @@
       <div class="vcalc__intro">
         <p class="eyebrow">Cuánto ganas</p>
         <h2 class="section__title">Calcula tu comisión</h2>
-        <p class="section__sub">Elige qué contratan tus clientes y cuántas empresas traes al mes. Los montos son sin ITBIS y usan los precios "desde" del catálogo.</p>
+        <p class="section__sub">Elige qué contratan tus clientes y cuántas empresas traes al mes. Los montos son sin ITBIS y usan los precios de referencia de Nuvem.</p>
       </div>
       <div class="vcalc__card">
         <div class="field">
           <label for="calcService">¿Qué contrata cada cliente?</label>
           <select id="calcService">
-            <option value="25000|15000">Contabilidad mensual (101 a 200 transacciones) + facturación electrónica</option>
-            <option value="15000|0">Contabilidad mensual (hasta 100 transacciones)</option>
             <option value="25000|0">Contabilidad mensual (101 a 200 transacciones)</option>
-            <option value="0|15000">Habilitación de facturación electrónica</option>
+            <option value="26410|0">Contabilidad mensual (101 a 200) + facturación electrónica Pro</option>
+            <option value="15000|0">Contabilidad mensual (hasta 100 transacciones)</option>
+            <option value="1410|0">Facturación electrónica, plan Pro (US$ 24 al mes)</option>
+            <option value="530|0">Facturación electrónica, plan Inicio (US$ 9 al mes)</option>
             <option value="0|60000">Conciliación bancaria automática</option>
             <option value="0|35000">Dashboards y reportería</option>
           </select>
@@ -110,11 +111,11 @@
           <input type="range" id="calcCount" min="1" max="10" step="1" value="2" />
         </div>
         <div class="vcalc__results" aria-live="polite">
-          <div><span>Tu primer mes</span><strong id="calcFirst">RD$ 8,000</strong></div>
-          <div><span>Cada mes, desde el mes 12</span><strong id="calcMonth12">RD$ 63,000</strong></div>
-          <div><span>Total del primer año</span><strong id="calcYear">RD$ 426,000</strong></div>
+          <div><span>Tu primer mes</span><strong id="calcFirst">RD$ 5,000</strong></div>
+          <div><span>Cada mes, desde el mes 12</span><strong id="calcMonth12">RD$ 60,000</strong></div>
+          <div><span>Total del primer año</span><strong id="calcYear">RD$ 390,000</strong></div>
         </div>
-        <p class="vcalc__note">Ejemplo: si cada mes traes 2 empresas que contratan contabilidad de RD$ 25,000 y facturación electrónica, cobras RD$ 2,500 al mes por cada una durante su primer año, más RD$ 1,500 por cada habilitación.</p>
+        <p class="vcalc__note">Ejemplo: si cada mes traes 2 empresas que contratan contabilidad de RD$ 25,000, cobras RD$ 2,500 al mes por cada una durante su primer año. Los planes en dólares usan el monto en pesos que muestra Nuvem FE.</p>
       </div>
     </div>
   </section>
@@ -129,7 +130,7 @@
       </div>
       <div class="vservices">
         <article><h3>Contabilidad mensual</h3><p>Todo el trabajo contable y fiscal del mes, con IA y un contador de Nuvem.</p><dl><div><dt>Desde</dt><dd>RD$ 15,000 al mes</dd></div><div><dt>Tu comisión</dt><dd>Desde RD$ 18,000 en el año</dd></div></dl></article>
-        <article><h3>Facturación electrónica</h3><p>Habilitación ante la DGII y emisión de cada e-CF desde el sistema que ya usa.</p><dl><div><dt>Habilitación desde</dt><dd>RD$ 15,000</dd></div><div><dt>Tu comisión</dt><dd>Desde RD$ 1,500</dd></div></dl></article>
+        <article><h3>Facturación electrónica</h3><p>Nuvem FE: e-CF en producción con la DGII, todo tipo de comprobante y reportes 606, 607 y 608. Plan gratis hasta 25 e-CF al mes.</p><dl><div><dt>Planes desde</dt><dd>US$ 9 al mes (≈ RD$ 530)</dd></div><div><dt>Tu comisión</dt><dd>10 % de cada mensualidad del año</dd></div></dl></article>
         <article><h3>Automatización de procesos</h3><p>Conciliación bancaria, cobros, pagos, depreciación e inventario en automático.</p><dl><div><dt>Desde</dt><dd>RD$ 15,000 por proceso</dd></div><div><dt>Tu comisión</dt><dd>Desde RD$ 1,500 por proceso</dd></div></dl></article>
         <article><h3>Dashboards y reportería</h3><p>El negocio a la vista en el celular: ventas, cobros, caja, inventario y rentabilidad.</p><dl><div><dt>Desde</dt><dd>RD$ 35,000</dd></div><div><dt>Tu comisión</dt><dd>Desde RD$ 3,500</dd></div></dl></article>
         <article><h3>Giro, el agente de IA</h3><p>Asistente de IA dentro del ERP: consulta, registra, modifica y analiza.</p><dl><div><dt>Desde</dt><dd>US$ 29 por usuario al mes</dd></div><div><dt>Tu comisión</dt><dd>10 % de cada mensualidad del año</dd></div></dl></article>
