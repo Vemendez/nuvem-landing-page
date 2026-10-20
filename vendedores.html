@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Programa de vendedores de Nuvem: gana 10 % de lo que paguen durante su primer año las empresas que traigas. Contabilidad, facturación electrónica, automatización, dashboards y Giro." />
+  <meta name="theme-color" content="#000B21" />
+  <title>Vende con Nuvem · Programa de vendedores</title>
+
+  <meta property="og:title" content="Vende con Nuvem: gana 10 % por cada empresa que traigas" />
+  <meta property="og:description" content="Recomiendas, Nuvem vende e implementa, y tú cobras 10 % de lo que el cliente pague durante su primer año." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://nuvem.com.do/vendedores" />
+  <meta property="og:image" content="https://nuvem.com.do/images/vendedores-og.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="vendedores.css" />
+
+  <link rel="icon" type="image/png" href="logos/nuvem-favicon.png" />
+  <link rel="apple-touch-icon" href="logos/nuvem-favicon.png" />
+</head>
+<body>
+
+  <!-- =================== NAVBAR =================== -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="index.html" class="brand" aria-label="Nuvem - Inicio">
+        <img src="logos/nuvem-logo-white.png" alt="NuVEM · Inteligencia Financiera" class="brand__logo" width="200" height="60" />
+      </a>
+
+      <nav class="nav__links" id="navLinks" aria-label="Navegación del programa">
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#calculadora">Cuánto ganas</a>
+        <a href="#que-vendes">Qué vendes</a>
+        <a href="#reglas">Reglas</a>
+        <a href="#preguntas">Preguntas</a>
+      </nav>
+
+      <a href="#aplicar" class="btn btn--nav nav__cta">Quiero vender</a>
+
+      <button class="nav__burger" id="navBurger" aria-label="Abrir menú" aria-controls="navLinks" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- =================== HERO =================== -->
+  <section class="vhero" id="top">
+    <div class="container vhero__inner">
+      <div class="vhero__copy">
+        <p class="eyebrow">Programa de vendedores Nuvem</p>
+        <h1 class="vhero__title">Gana <span>10 %</span> por cada empresa que traigas a Nuvem.</h1>
+        <p class="vhero__sub">Tú recomiendas. Nuvem hace la reunión, la propuesta y la implementación. Y tú cobras 10 % de lo que el cliente pague durante su primer año, cada mes.</p>
+        <div class="vhero__actions">
+          <a href="#aplicar" class="btn btn--gold btn--lg">Quiero vender con Nuvem</a>
+          <a href="#calculadora" class="btn btn--outline-light btn--lg">Calcula cuánto ganas</a>
+        </div>
+      </div>
+      <dl class="vhero__stats">
+        <div><dt>10 %</dt><dd>de todo lo que pague el cliente</dd></div>
+        <div><dt>12 meses</dt><dd>cobrando por cada cliente</dd></div>
+        <div><dt>RD$ 0</dt><dd>para empezar, sin cuota mínima</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- =================== CÓMO FUNCIONA =================== -->
+  <section class="section section--light" id="como-funciona">
+    <div class="container">
+      <div class="section__head section__head--center">
+        <p class="eyebrow eyebrow--dark">Cómo funciona</p>
+        <h2 class="section__title">Tú abres la puerta. Nosotros hacemos el resto.</h2>
+        <p class="section__sub">No necesitas saber de contabilidad ni de sistemas. Necesitas conocer empresas que quieran tener sus números en orden.</p>
+      </div>
+      <ol class="vsteps" role="list">
+        <li><span class="vsteps__n">1</span><h3>Aplicas</h3><p>Llenas el formulario de esta página. Te escribimos por WhatsApp y te damos la guía y los materiales.</p></li>
+        <li><span class="vsteps__n">2</span><h3>Registras al prospecto</h3><p>Nos mandas el nombre de la empresa y del contacto. Si nadie lo registró antes, es tuyo por 90 días.</p></li>
+        <li><span class="vsteps__n">3</span><h3>Nuvem lo atiende</h3><p>Hacemos la conversación inicial, el levantamiento, la propuesta y la implementación. Tú puedes acompañar.</p></li>
+        <li><span class="vsteps__n">4</span><h3>Cobras cada mes</h3><p>Cada vez que el cliente paga, te toca el 10 %. Se paga el día 15 del mes siguiente, durante 12 meses.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- =================== CALCULADORA =================== -->
+  <section class="section section--dark" id="calculadora">
+    <div class="container vcalc">
+      <div class="vcalc__intro">
+        <p class="eyebrow">Cuánto ganas</p>
+        <h2 class="section__title">Calcula tu comisión</h2>
+        <p class="section__sub">Elige qué contratan tus clientes y cuántas empresas traes al mes. Los montos son sin ITBIS y usan los precios de referencia de Nuvem.</p>
+      </div>
+      <div class="vcalc__card">
+        <div class="field">
+          <label for="calcService">¿Qué contrata cada cliente?</label>
+          <select id="calcService">
+            <option value="25000|0">Contabilidad mensual (101 a 200 transacciones)</option>
+            <option value="26410|0">Contabilidad mensual (101 a 200) + facturación electrónica Pro</option>
+            <option value="15000|0">Contabilidad mensual (hasta 100 transacciones)</option>
+            <option value="1410|0">Facturación electrónica, plan Pro (US$ 24 al mes)</option>
+            <option value="530|0">Facturación electrónica, plan Inicio (US$ 9 al mes)</option>
+            <option value="0|60000">Conciliación bancaria automática</option>
+            <option value="0|35000">Dashboards y reportería</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="calcCount">Empresas nuevas al mes: <output id="calcCountOut" for="calcCount">2</output></label>
+          <input type="range" id="calcCount" min="1" max="10" step="1" value="2" />
+        </div>
+        <div class="vcalc__results" aria-live="polite">
+          <div><span>Tu primer mes</span><strong id="calcFirst">RD$ 5,000</strong></div>
+          <div><span>Cada mes, desde el mes 12</span><strong id="calcMonth12">RD$ 60,000</strong></div>
+          <div><span>Total del primer año</span><strong id="calcYear">RD$ 390,000</strong></div>
+        </div>
+        <p class="vcalc__note">Ejemplo: si cada mes traes 2 empresas que contratan contabilidad de RD$ 25,000, cobras RD$ 2,500 al mes por cada una durante su primer año. Los planes en dólares usan el monto en pesos que muestra Nuvem FE.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== QUÉ VENDES =================== -->
+  <section class="section section--soft" id="que-vendes">
+    <div class="container">
+      <div class="section__head section__head--center">
+        <p class="eyebrow eyebrow--dark">Qué vendes</p>
+        <h2 class="section__title">Servicios que toda empresa necesita</h2>
+        <p class="section__sub">Precios de referencia, sin ITBIS. Cada cliente recibe una propuesta a la medida; tu comisión es sobre lo que pague.</p>
+      </div>
+      <div class="vservices">
+        <article><h3>Contabilidad mensual</h3><p>Todo el trabajo contable y fiscal del mes, con IA y un contador de Nuvem.</p><dl><div><dt>Desde</dt><dd>RD$ 15,000 al mes</dd></div><div><dt>Tu comisión</dt><dd>Desde RD$ 18,000 en el año</dd></div></dl></article>
+        <article><h3>Facturación electrónica</h3><p>Nuvem FE: e-CF en producción con la DGII, todo tipo de comprobante y reportes 606, 607 y 608. Plan gratis hasta 25 e-CF al mes.</p><dl><div><dt>Planes desde</dt><dd>US$ 9 al mes (≈ RD$ 530)</dd></div><div><dt>Tu comisión</dt><dd>10 % de cada mensualidad del año</dd></div></dl></article>
+        <article><h3>Automatización de procesos</h3><p>Conciliación bancaria, cobros, pagos, depreciación e inventario en automático.</p><dl><div><dt>Desde</dt><dd>RD$ 15,000 por proceso</dd></div><div><dt>Tu comisión</dt><dd>Desde RD$ 1,500 por proceso</dd></div></dl></article>
+        <article><h3>Dashboards y reportería</h3><p>El negocio a la vista en el celular: ventas, cobros, caja, inventario y rentabilidad.</p><dl><div><dt>Desde</dt><dd>RD$ 35,000</dd></div><div><dt>Tu comisión</dt><dd>Desde RD$ 3,500</dd></div></dl></article>
+        <article><h3>Giro, el agente de IA</h3><p>Asistente de IA dentro del ERP: consulta, registra, modifica y analiza.</p><dl><div><dt>Desde</dt><dd>US$ 29 por usuario al mes</dd></div><div><dt>Tu comisión</dt><dd>10 % de cada mensualidad del año</dd></div></dl></article>
+        <article class="vservices__who"><h3>¿A quién le vendes?</h3><ul role="list"><li>Empresas que deben pasar a facturación electrónica</li><li>Mipymes que llevan la contabilidad en Excel o atrasada</li><li>Negocios con ADM Cloud, QuickBooks, Odoo o Dynamics</li><li>Dueños que quieren ver sus números sin pedir reportes</li></ul></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== PARA QUIÉN / REGLAS =================== -->
+  <section class="section section--light" id="reglas">
+    <div class="container grid-2 vrules">
+      <div>
+        <p class="eyebrow eyebrow--dark">Para quién es</p>
+        <h2 class="section__title">Para quien conoce empresas</h2>
+        <ul class="vchecks" role="list">
+          <li>Contadores y auxiliares independientes</li>
+          <li>Vendedores de software, puntos de venta o equipos</li>
+          <li>Consultores y asesores de negocios</li>
+          <li>Emprendedores con una buena red de contactos</li>
+        </ul>
+        <p class="vrules__aside">Es un trabajo independiente, a tu ritmo. No es un empleo y no hay horario ni cuota.</p>
+      </div>
+      <div>
+        <p class="eyebrow eyebrow--dark">Reglas claras</p>
+        <h2 class="section__title">Lo que tienes que saber</h2>
+        <dl class="vterms">
+          <div><dt>Comisión</dt><dd>10 % de todo lo que el cliente pague a Nuvem en sus primeros 12 meses, sin ITBIS: implementación y mensualidades.</dd></div>
+          <div><dt>Cuándo cobras</dt><dd>El día 15 del mes siguiente a cada pago del cliente. Solo sobre pagos cobrados.</dd></div>
+          <div><dt>Tu prospecto</dt><dd>Registrado contigo por 90 días. Si en ese tiempo contrata, la comisión es tuya.</dd></div>
+          <div><dt>Quién no cuenta</dt><dd>Clientes que ya trabajan con Nuvem o que otro vendedor registró antes.</dd></div>
+          <div><dt>Precios</dt><dd>Los define Nuvem en la propuesta. No se prometen descuentos ni servicios fuera de ella.</dd></div>
+          <div><dt>Impuestos</dt><dd>Los pagos llevan las retenciones que manda la ley.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== PREGUNTAS =================== -->
+  <section class="section section--soft" id="preguntas">
+    <div class="container vfaq">
+      <div class="section__head section__head--center">
+        <p class="eyebrow eyebrow--dark">Preguntas frecuentes</p>
+        <h2 class="section__title">Antes de aplicar</h2>
+      </div>
+      <details><summary>¿Tengo que saber de contabilidad?</summary><p>No. Tú presentas a Nuvem. Nuestro equipo hace la conversación inicial, explica los servicios y prepara la propuesta.</p></details>
+      <details><summary>¿Cuánto cuesta entrar al programa?</summary><p>Nada. No hay cuota de entrada ni metas mínimas.</p></details>
+      <details><summary>¿Qué pasa si el cliente deja de pagar?</summary><p>La comisión se calcula sobre lo que el cliente pague de verdad. Si deja de pagar o cancela, la comisión se detiene.</p></details>
+      <details><summary>¿Y después de los 12 meses?</summary><p>La comisión de ese cliente termina. Por eso conviene traer clientes nuevos cada mes: tu ingreso crece mientras sigas cerrando.</p></details>
+      <details><summary>¿Cómo sé lo que me toca?</summary><p>Cada mes recibes el detalle por cliente: qué pagó, cuánto te toca y cuándo se te deposita.</p></details>
+      <details><summary>¿Puedo vender desde cualquier provincia?</summary><p>Sí. Las reuniones con los clientes se pueden hacer por videollamada en todo el país.</p></details>
+    </div>
+  </section>
+
+  <!-- =================== APLICAR =================== -->
+  <section class="section section--light" id="aplicar">
+    <div class="container grid-2 vapply">
+      <div>
+        <p class="eyebrow eyebrow--dark">Aplica</p>
+        <h2 class="section__title">Quiero vender con Nuvem</h2>
+        <p class="lead">Llena el formulario y se abre WhatsApp con tus datos listos para enviar. Te respondemos con la guía del vendedor y los materiales.</p>
+        <ul class="vchecks" role="list">
+          <li>Guía del vendedor con precios y argumentos</li>
+          <li>Catálogo de servicios para compartir</li>
+          <li>Acompañamiento en tus primeras reuniones</li>
+        </ul>
+      </div>
+      <form class="contact-form" id="applyForm" novalidate>
+        <div class="field-row">
+          <div class="field"><label for="fName">Nombre completo</label><input id="fName" name="nombre" autocomplete="name" required /></div>
+          <div class="field"><label for="fPhone">WhatsApp</label><input id="fPhone" name="whatsapp" type="tel" autocomplete="tel" placeholder="809 000 0000" required /></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label for="fEmail">Correo</label><input id="fEmail" name="correo" type="email" autocomplete="email" required /></div>
+          <div class="field"><label for="fCity">Ciudad o provincia</label><input id="fCity" name="ciudad" autocomplete="address-level2" required /></div>
+        </div>
+        <div class="field">
+          <label for="fRole">¿A qué te dedicas?</label>
+          <select id="fRole" name="ocupacion" required>
+            <option value="">Elige una opción</option>
+            <option>Contador o auxiliar contable</option>
+            <option>Vendedor de software o puntos de venta</option>
+            <option>Consultor o asesor de negocios</option>
+            <option>Vendedor en otra área</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="fCount">¿Cuántas empresas podrías presentar en los próximos 3 meses?</label>
+          <select id="fCount" name="empresas" required>
+            <option value="">Elige una opción</option>
+            <option>1 a 3</option>
+            <option>4 a 10</option>
+            <option>Más de 10</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="fNotes">¿Qué tipo de empresas conoces? (opcional)</label>
+          <textarea id="fNotes" name="notas" placeholder="Ej.: ferreterías y colmados en Santiago, clientes de mi oficina contable…"></textarea>
+        </div>
+        <button type="submit" class="btn btn--navy btn--full">Enviar por WhatsApp</button>
+        <p class="form-note" id="applyNote" role="status"></p>
+        <p class="vapply__alt">¿Prefieres correo? Escríbenos a <span class="vapply__mail">vemendez@nuvem.com.do</span></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- =================== FOOTER =================== -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="brand brand--light">
+          <img src="logos/nuvem-logo-white.png" alt="NuVEM · Inteligencia Financiera" class="brand__logo" width="200" height="60" />
+        </a>
+        <p>Equipo financiero y contable externo para PYMES en República Dominicana. Contabilidad, cumplimiento, sistemas y automatización.</p>
+      </div>
+      <div>
+        <h4>Programa</h4>
+        <ul role="list">
+          <li><a href="#como-funciona">Cómo funciona</a></li>
+          <li><a href="#calculadora">Cuánto ganas</a></li>
+          <li><a href="#reglas">Reglas</a></li>
+          <li><a href="#aplicar">Aplicar</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Nuvem</h4>
+        <ul role="list">
+          <li><a href="index.html#pilares">Servicios</a></li>
+          <li><a href="index.html#ecf">Facturación electrónica</a></li>
+          <li><a href="index.html#agente">Agente AI</a></li>
+          <li><a href="index.html#dashboards">Dashboards</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul role="list" class="footer__contact">
+          <li><a href="mailto:vemendez@nuvem.com.do">vemendez@nuvem.com.do</a></li>
+          <li><a href="https://wa.me/18493561320" target="_blank" rel="noopener noreferrer">+1 (849) 356-1320</a></li>
+          <li><a href="https://instagram.com/nuvem.do" target="_blank" rel="noopener noreferrer">Instagram @nuvem.do</a></li>
+          <li>Santo Domingo, R.D.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <span>© <span id="year">2026</span> Nuvem · Todos los derechos reservados.</span>
+        <span>Programa de vendedores independientes · República Dominicana.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="vendedores.js"></script>
+</body>
+</html>
