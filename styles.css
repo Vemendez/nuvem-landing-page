@@ -1339,6 +1339,177 @@ img, svg { max-width: 100%; display: block; }
   .sellers__stat { max-width: 520px; width: 100%; margin-inline: auto; }
 }
 
+/* =========================================================
+   Diseño de la campaña de vendedores (crema, azul y turquesa)
+   Igual a los posts: fondo crema, Bricolage Grotesque, turquesa.
+   ========================================================= */
+.vpage, .sellers {
+  --v-cream: #F5F1E8;
+  --v-cream-2: #EDE6D6;
+  --v-navy: #0B1E3F;
+  --v-teal: #1C9AAE;
+  --v-teal-l: #5CCBDA;
+  --v-teal-s: rgba(28, 154, 174, .28);
+  --v-ink: rgba(11, 30, 63, .7);
+  --v-line: rgba(11, 30, 63, .14);
+  --v-font: 'Bricolage Grotesque', 'Inter', system-ui, sans-serif;
+}
+.vpage { background: var(--v-cream); }
+.vpage .nav { border-bottom-color: var(--v-teal); }
+.vpage .nav__cta { border-radius: 999px; }
+.vpage h1, .vpage h2, .vpage h3, .vpage .section__title,
+.sellers h2, .sellers .section__title {
+  font-family: var(--v-font);
+  letter-spacing: -.025em;
+}
+.vpage h2, .vpage .section__title { font-weight: 800; color: var(--v-navy); }
+.vpage h3 { font-weight: 700; color: var(--v-navy); }
+.vpage .eyebrow, .vpage .eyebrow--dark, .sellers .eyebrow { color: var(--v-teal); }
+.vpage .section__sub, .vpage .lead { color: var(--v-ink); }
+.vpage .section--light { background: var(--v-cream); }
+.vpage .section--soft { background: var(--v-cream-2); }
+
+/* Botones */
+.btn--v { background: var(--v-navy); color: #fff; border-color: var(--v-navy); }
+.btn--v:hover { background: #142B54; color: #fff; box-shadow: 0 10px 24px rgba(11, 30, 63, .25); }
+.btn--vo { background: transparent; color: var(--v-navy); border: 2px solid var(--v-navy); }
+.btn--vo:hover { background: rgba(11, 30, 63, .06); color: var(--v-navy); }
+
+/* Hero */
+.vpage .vhero {
+  background: var(--v-cream);
+  border-bottom: 0;
+  color: var(--v-ink);
+  position: relative;
+  overflow: hidden;
+}
+.vpage .vhero::after {
+  content: "";
+  position: absolute;
+  width: 560px; height: 560px;
+  right: -180px; top: -160px;
+  border: 3px solid var(--v-teal);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.vpage .vhero__inner { position: relative; z-index: 1; }
+.vpage .vhero__title {
+  font-family: var(--v-font);
+  font-weight: 500;
+  color: var(--v-navy);
+  font-size: clamp(2.4rem, 5.4vw, 4rem);
+  line-height: 1.04;
+}
+.vpage .vhero__title span {
+  font-weight: 800;
+  color: var(--v-navy);
+  background: linear-gradient(transparent 62%, var(--v-teal-s) 62%);
+}
+.vpage .vhero__sub { color: var(--v-ink); }
+.vpage .vhero__stats { background: transparent; border: 0; gap: .75rem; border-radius: 0; }
+.vpage .vhero__stats div { background: #fff; border-radius: 22px; padding: 1.25rem 1.5rem; }
+.vpage .vhero__stats div:first-child { background: var(--v-navy); }
+.vpage .vhero__stats dt { font-family: var(--v-font); font-weight: 800; color: var(--v-teal); letter-spacing: -.03em; font-size: 2.6rem; }
+.vpage .vhero__stats div:first-child dt { color: var(--v-teal-l); }
+.vpage .vhero__stats dd { color: var(--v-ink); }
+.vpage .vhero__stats div:first-child dd { color: rgba(255, 255, 255, .8); }
+
+/* Pasos */
+.vpage .vsteps li { background: #fff; border: 0; border-radius: 26px; padding: 1.75rem 1.6rem; }
+.vpage .vsteps li:last-child { background: var(--v-navy); }
+.vpage .vsteps li:last-child h3 { color: #fff; }
+.vpage .vsteps li:last-child p { color: rgba(255, 255, 255, .75); }
+.vpage .vsteps__n {
+  width: auto; height: auto; background: none; border-radius: 0;
+  font-family: var(--v-font); font-size: 2.6rem; font-weight: 800; letter-spacing: -.04em;
+  color: var(--v-teal); line-height: 1; margin-bottom: .9rem;
+}
+.vpage .vsteps__n::before { content: "0"; }
+.vpage .vsteps li:last-child .vsteps__n { color: var(--v-teal-l); }
+.vpage .vsteps p { color: var(--v-ink); }
+
+/* Calculadora */
+.vpage .section--dark { background: var(--v-navy); }
+.vpage .section--dark::before { display: none; }
+.vpage .section--dark .section__title { color: #fff; }
+.vpage .section--dark .eyebrow { color: var(--v-teal-l); }
+.vpage .section--dark .section__sub { color: rgba(255, 255, 255, .72); }
+.vpage .vcalc__card { border-radius: 26px; }
+.vpage .vcalc__card output { color: var(--v-teal); }
+.vpage .vcalc__card input[type="range"] { accent-color: var(--v-teal); }
+.vpage .vcalc__results div { background: var(--v-cream); border-radius: 16px; }
+.vpage .vcalc__results div:nth-child(2) { background: var(--v-navy); }
+.vpage .vcalc__results div:nth-child(2) span { color: rgba(255, 255, 255, .7); }
+.vpage .vcalc__results div:nth-child(2) strong { color: var(--v-teal-l); }
+.vpage .vcalc__results strong { font-family: var(--v-font); font-weight: 800; color: var(--v-navy); letter-spacing: -.02em; }
+
+/* Servicios */
+.vpage .vservices { counter-reset: svc; }
+.vpage .vservices article { border: 0; border-radius: 26px; }
+.vpage .vservices article:not(.vservices__who) h3::before {
+  counter-increment: svc;
+  content: "0" counter(svc);
+  display: block;
+  font-size: .95rem; font-weight: 700; letter-spacing: .02em;
+  color: var(--v-teal); margin-bottom: .5rem;
+}
+.vpage .vservices p { color: var(--v-ink); }
+.vpage .vservices dl { border-top-color: var(--v-line); }
+.vpage .vservices dd { color: var(--v-navy); }
+.vpage .vservices__who { background: var(--v-navy) !important; }
+.vpage .vservices__who h3 { color: var(--v-teal-l); }
+.vpage .vservices__who li::before { color: var(--v-teal-l); }
+
+/* Reglas y listas */
+.vpage .vchecks li { color: var(--v-navy); }
+.vpage .vchecks li::before { background: var(--v-teal); box-shadow: none; width: .7rem; height: .7rem; top: .5em; }
+.vpage .vterms div { border-bottom-color: var(--v-line); }
+.vpage .vterms dt { color: var(--v-navy); }
+.vpage .vterms dd, .vpage .vrules__aside { color: var(--v-ink); }
+
+/* Preguntas */
+.vpage .vfaq details { border: 0; border-radius: 18px; }
+.vpage .vfaq summary { color: var(--v-navy); font-family: var(--v-font); font-weight: 700; font-size: 1.05rem; }
+.vpage .vfaq summary::after { color: var(--v-teal); }
+.vpage .vfaq summary:focus-visible { outline-color: var(--v-teal); }
+
+/* Formulario */
+.vpage .contact-form { border: 0; border-radius: 26px; box-shadow: 0 18px 40px rgba(11, 30, 63, .08); }
+.vpage .field input:focus, .vpage .field select:focus, .vpage .field textarea:focus {
+  border-color: var(--v-teal);
+  box-shadow: 0 0 0 4px rgba(28, 154, 174, .15);
+}
+.vpage .vapply__mail { color: var(--v-teal); }
+
+/* Sección de vendedores en la página principal */
+.sellers { background: var(--v-cream) !important; color: var(--v-ink) !important; position: relative; overflow: hidden; }
+.sellers::after {
+  content: "";
+  position: absolute;
+  width: 460px; height: 460px;
+  right: -230px; top: -250px;
+  border: 3px solid var(--v-teal);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.sellers .sellers__inner { position: relative; z-index: 1; }
+@media (max-width: 980px) {
+  .vpage .vhero::after, .sellers::after { display: none; }
+}
+.sellers .section__title { color: var(--v-navy) !important; font-weight: 500; }
+.sellers .section__title span { color: var(--v-navy) !important; font-weight: 800; background: linear-gradient(transparent 62%, var(--v-teal-s) 62%); }
+.sellers .sellers__steps li { border-color: var(--v-line) !important; }
+.sellers .sellers__steps span { color: var(--v-teal) !important; font-family: var(--v-font); font-weight: 800; }
+.sellers .sellers__steps strong { color: var(--v-navy) !important; }
+.sellers .sellers__steps p { color: var(--v-ink) !important; }
+.sellers .sellers__more { color: var(--v-navy) !important; border-bottom-color: var(--v-teal) !important; }
+.sellers .sellers__more:hover { color: var(--v-teal) !important; }
+.sellers .sellers__stat { background: var(--v-navy) !important; border: 0 !important; border-radius: 28px; }
+.sellers .sellers__big { font-family: var(--v-font); font-weight: 800 !important; color: #fff !important; }
+.sellers .sellers__big small { color: var(--v-teal-l); }
+.sellers .sellers__stat hr { background: var(--v-teal) !important; }
+.sellers .sellers__stat .is-hi dt, .sellers .sellers__stat .is-hi dd { color: var(--v-teal-l) !important; }
+
 /* ---------- Precios ---------- */
 .pricing-grid {
   display: grid;
