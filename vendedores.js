@@ -10,8 +10,7 @@
      abrirlo y confirmar una sola vez. Después, FormSubmit da un código que puede
      reemplazar el correo en esta dirección para no mostrarlo en el código. */
   const FORM_ENDPOINT = 'https://formsubmit.co/ajax/vemendez@nuvem.com.do';
-  const COMMISSION = 0.10;
-  const MONTHS = 12;
+  const PROJECT_COMMISSION = 0.10; // proyectos de un solo pago
 
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
@@ -32,30 +31,26 @@
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
 
   /* ---------- Calculadora ----------
-     Cada cliente paga una mensualidad (m) y/o un pago único (o).
-     Mes k (1..12): comisión = n·o·10 % + n·k·m·10 %.
-     Desde el mes 12 se mantiene, porque salen los clientes de hace un año
-     y entran los nuevos. */
+     Cada cliente paga una mensualidad (m) y/o un proyecto de un solo pago (o).
+     Comisión por empresa = una mensualidad completa (m) + 10 % del proyecto (o).
+     Se cobra una sola vez, a los 15 días del primer pago del cliente. */
   const fmt = (v) => 'RD$ ' + Math.round(v).toLocaleString('en-US');
   const service = document.getElementById('calcService');
   const count = document.getElementById('calcCount');
   const countOut = document.getElementById('calcCountOut');
-  const firstEl = document.getElementById('calcFirst');
-  const m12El = document.getElementById('calcMonth12');
-  const yearTotalEl = document.getElementById('calcYear');
-
-  const monthCommission = (k, n, m, o) => n * o * COMMISSION + n * Math.min(k, MONTHS) * m * COMMISSION;
+  const perEl = document.getElementById('calcFirst');
+  const monthEl = document.getElementById('calcMonth12');
+  const quarterEl = document.getElementById('calcYear');
 
   const updateCalc = () => {
     if (!service || !count) return;
     const [m, o] = service.value.split('|').map(Number);
     const n = Number(count.value);
     if (countOut) countOut.textContent = String(n);
-    let year = 0;
-    for (let k = 1; k <= MONTHS; k += 1) year += monthCommission(k, n, m, o);
-    firstEl.textContent = fmt(monthCommission(1, n, m, o));
-    m12El.textContent = fmt(monthCommission(12, n, m, o));
-    yearTotalEl.textContent = fmt(year);
+    const per = m + o * PROJECT_COMMISSION;
+    perEl.textContent = fmt(per);
+    monthEl.textContent = fmt(per * n);
+    quarterEl.textContent = fmt(per * n * 3);
   };
   service?.addEventListener('change', updateCalc);
   count?.addEventListener('input', updateCalc);
