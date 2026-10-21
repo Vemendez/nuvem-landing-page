@@ -1438,9 +1438,9 @@ img, svg { max-width: 100%; display: block; }
 .vpage .vcalc__card output { color: var(--v-teal); }
 .vpage .vcalc__card input[type="range"] { accent-color: var(--v-teal); }
 .vpage .vcalc__results div { background: var(--v-cream); border-radius: 16px; }
-.vpage .vcalc__results div:nth-child(2) { background: var(--v-navy); }
-.vpage .vcalc__results div:nth-child(2) span { color: rgba(255, 255, 255, .7); }
-.vpage .vcalc__results div:nth-child(2) strong { color: var(--v-teal-l); }
+.vpage .vcalc__results div:nth-child(3) { background: var(--v-navy); }
+.vpage .vcalc__results div:nth-child(3) span { color: rgba(255, 255, 255, .7); }
+.vpage .vcalc__results div:nth-child(3) strong { color: var(--v-teal-l); }
 .vpage .vcalc__results strong { font-family: var(--v-font); font-weight: 800; color: var(--v-navy); letter-spacing: -.02em; }
 
 /* Servicios */
