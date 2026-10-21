@@ -42,7 +42,7 @@
   const countOut = document.getElementById('calcCountOut');
   const firstEl = document.getElementById('calcFirst');
   const m12El = document.getElementById('calcMonth12');
-  const yearTotalEl = document.getElementById('calcYear');
+  const yearTotalEl = document.getElementById('calcYear'); // por cada empresa, al mes
 
   const monthCommission = (k, n, m, o) => n * o * COMMISSION + n * Math.min(k, MONTHS) * m * COMMISSION;
 
@@ -51,11 +51,11 @@
     const [m, o] = service.value.split('|').map(Number);
     const n = Number(count.value);
     if (countOut) countOut.textContent = String(n);
-    let year = 0;
-    for (let k = 1; k <= MONTHS; k += 1) year += monthCommission(k, n, m, o);
     firstEl.textContent = fmt(monthCommission(1, n, m, o));
     m12El.textContent = fmt(monthCommission(12, n, m, o));
-    yearTotalEl.textContent = fmt(year);
+    yearTotalEl.textContent = fmt(m > 0 ? m * COMMISSION : o * COMMISSION); // por cada empresa
+    const perLabel = document.getElementById('calcPerLabel');
+    if (perLabel) perLabel.textContent = m > 0 ? 'Por cada empresa, al mes' : 'Por cada proyecto';
   };
   service?.addEventListener('change', updateCalc);
   count?.addEventListener('input', updateCalc);
