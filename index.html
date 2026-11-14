@@ -11,7 +11,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://assets.calendly.com" />
   <link rel="preconnect" href="https://calendly.com" />
-  <link rel="preconnect" href="https://app.powerbi.com" />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Serif:wght@500;600&display=swap" rel="stylesheet" />
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
 
@@ -104,10 +103,6 @@
         <li class="eco-logo">
           <img src="logos/integrations/adm-cloud.svg" alt="" width="36" height="36" />
           <span class="eco-logo__name">ADM Cloud</span>
-        </li>
-        <li class="eco-logo">
-          <img src="logos/integrations/powerbi.svg" alt="" width="36" height="36" />
-          <span class="eco-logo__name">Power BI</span>
         </li>
       </ul>
       <p class="ecosystem__note">También operamos con bancos, DGII, TSS, e-CF y reporting gerencial en la nube.</p>
@@ -321,7 +316,7 @@
         <span class="eyebrow eyebrow--dark">Dashboards</span>
         <h2 class="section__title section__title--center">Estados financieros en un tablero, no en un Excel suelto.</h2>
         <p class="section__sub">
-          Diseñamos dashboards en Power BI conectados a su ERP: P&amp;L, Balance, cash flow y KPIs listos para gerencia. Este es un demo ilustrativo del tipo de entrega.
+          Diseñamos dashboards conectados a su ERP: P&amp;L, Balance, cash flow y KPIs listos para gerencia. Pruebe este demo: cambie el período, la sucursal o la vista.
         </p>
       </div>
 
@@ -339,20 +334,39 @@
           <span></span><span></span><span></span>
           <p>Lumina · Estados financieros (demo)</p>
         </div>
-        <div class="dashboard-frame__stage">
-          <iframe
-            class="dashboard-frame__embed"
-            title="Demo de dashboard de estados financieros Lumina"
-            src="https://app.powerbi.com/view?r=eyJrIjoiMmNmODQzM2YtYjFhMi00NzczLTk2ODUtN2ZmNTRmNWQ2ODFmIiwidCI6IjE3NjUwZjM0LTExZDQtNDdlZS05YzQ0LTRhNmQyYWY0ZjE5YiJ9"
-            allowfullscreen
-            loading="lazy"
-          ></iframe>
+        <div class="dash" data-dash>
+          <div class="dash__bar">
+            <div class="dash__tabs" role="tablist" aria-label="Vista del tablero">
+              <button type="button" role="tab" id="tab-res" aria-selected="true" aria-controls="panel-res">Resultados</button>
+              <button type="button" role="tab" id="tab-bal" aria-selected="false" aria-controls="panel-bal" tabindex="-1">Balance</button>
+              <button type="button" role="tab" id="tab-caja" aria-selected="false" aria-controls="panel-caja" tabindex="-1">Flujo de caja</button>
+            </div>
+            <div class="dash__filters">
+              <label>Período
+                <select id="dash-periodo">
+                  <option value="12">Últimos 12 meses</option>
+                  <option value="ytd">Año en curso</option>
+                  <option value="3">Último trimestre</option>
+                </select>
+              </label>
+              <label>Sucursal
+                <select id="dash-sucursal">
+                  <option value="todas">Todas</option>
+                  <option value="sd">Santo Domingo</option>
+                  <option value="sti">Santiago</option>
+                </select>
+              </label>
+            </div>
+          </div>
+          <p class="dash__aviso" id="dash-aviso" role="status" hidden></p>
+          <div class="dash__kpis" id="dash-kpis"></div>
+          <div role="tabpanel" id="panel-res" aria-labelledby="tab-res" tabindex="0"></div>
+          <div role="tabpanel" id="panel-bal" aria-labelledby="tab-bal" tabindex="0" hidden></div>
+          <div role="tabpanel" id="panel-caja" aria-labelledby="tab-caja" tabindex="0" hidden></div>
+          <noscript><p class="dash__aviso">Active JavaScript para ver el tablero.</p></noscript>
         </div>
       </figure>
-      <p class="dashboards__note">
-        Demo con datos ilustrativos, no de un cliente real.
-        <a href="https://app.powerbi.com/view?r=eyJrIjoiMmNmODQzM2YtYjFhMi00NzczLTk2ODUtN2ZmNTRmNWQ2ODFmIiwidCI6IjE3NjUwZjM0LTExZDQtNDdlZS05YzQ0LTRhNmQyYWY0ZjE5YiJ9" target="_blank" rel="noopener noreferrer">Abrir en pantalla completa</a>
-      </p>
+      <p class="dashboards__note">Demo con datos ilustrativos de una empresa ficticia, no de un cliente real.</p>
     </div>
   </section>
 
@@ -686,5 +700,6 @@
 
   <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
   <script src="script.js"></script>
+  <script src="dashboard.js" defer></script>
 </body>
 </html>
