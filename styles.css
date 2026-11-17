@@ -741,6 +741,8 @@ img, svg { max-width: 100%; display: block; }
   margin-top: 2rem;
 }
 
+.agent__demo-note { margin: 0; font-size: .9rem; color: var(--ink-500, #5B6878); max-width: 34rem; }
+
 .agent__intro .lead {
   margin-bottom: 1.25rem;
 }
